@@ -1,0 +1,21 @@
+.container1 {
+    background-image: url('../../assets/img/bg-page-1-cut.png');
+    /* min-height: 3500px; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+
+
+.page_1{
+    position: relative;
+    padding: 16px;
+
+}
+
+
+
+.page_2{
+    height: 500px;
+}
