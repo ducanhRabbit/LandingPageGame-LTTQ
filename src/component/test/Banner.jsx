@@ -1,5 +1,6 @@
 import React from 'react'
 import DownlBoard from '../DownlBoard'
+import RegistrationRewards from '../RegistrationReward/RegistrationRewards'
 
 function Banner() {
     return (
@@ -24,9 +25,35 @@ function Banner() {
                     <DownlBoard />
                 </div>
             </section>
-            <section className='2'>
+            <section className='2 h-[958px]'>
                 <div className='title'>
-                    <img className='mx-auto' src='./src/assets/img/title-pg2.png'/>
+                    <img className='mx-auto' src='./src/assets/img/title-pg2.png' />
+                </div>
+                <RegistrationRewards />
+            </section>
+            <section className='3'>
+                <div className='title py-12'>
+                    <img className='mx-auto' src='./src/assets/img/title-pg3.png' />
+                </div>
+
+                <div className='carousel flex'>
+                    <div className='left w-[50%]'>
+                        <div className='char-info'>
+                            <div className='text-[20px] relative'>
+                                THẦN - Quan Vũ
+                                    <img className='absolute top-0 right-0' src='./src/assets/img/rare.png'/>
+                            </div>
+                            <div>
+                            [NHÂN VẬT] Tuyệt sắc giai nhân. Dùng sắc đẹp và tài năng khéo léo của mình, Điêu Thuyền đã làm cho bánh xe lịch sử phải đổi hướng. Nàng làm theo sắp xếp của Vương Doãn, trở thành thê thiếp của Lữ Bố, Đổng Trác bị Lữ Bố giết vì giành giật nàng.
+                            </div>
+                        </div>
+                        <div className='selection'>
+
+                        </div>
+                    </div>
+                    <div className='right flex-1'>
+
+                    </div>
                 </div>
             </section>
         </div>
