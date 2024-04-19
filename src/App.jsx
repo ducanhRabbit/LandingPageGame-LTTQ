@@ -13,8 +13,8 @@ function App() {
 
   return (
     <>
-       {/* <Banner></Banner> */}
-       <Selection></Selection>
+       <Banner></Banner>
+       {/* <Selection></Selection> */}
         {/* <RegistrationRewards></RegistrationRewards> */}
 
     </>
