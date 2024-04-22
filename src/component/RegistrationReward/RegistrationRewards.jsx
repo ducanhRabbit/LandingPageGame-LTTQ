@@ -5,13 +5,12 @@ function RegistrationRewards() {
 
   const { screenWidth, screenHeight } = useScreenSize()
   const ratio = screenWidth / 1903
+  console.log(screenWidth)
   console.log(ratio)
   return (
 
-    <div className={`relative max-w-[2000px] mt-8`}>
-      <div style={{
-        transform: `scale(${ratio})`
-      }}>
+    <div className={`relative mt-8`}>
+      <div >
         <div className='anchor w-[580px] h-[684px] absolute left-1/2 -translate-x-1/2'>
           <div className='100.000 bg-[url("./src/assets/img/100.000(active).png")] w-[580px] h-[684px] bg-cover absolute grayscale z-50'>
 
