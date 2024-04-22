@@ -7,6 +7,7 @@ import Banner from "./component/test/Banner"
 import Test from "./component/test/Test"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import useScreenSize from './hook/useScreenSize';
 
 function App() {
   register()
