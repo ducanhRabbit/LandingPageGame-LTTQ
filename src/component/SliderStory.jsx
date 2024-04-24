@@ -17,7 +17,6 @@ function SliderStory() {
         slidesToScroll: 1,
         waitForAnimate: false,
         beforeChange: (currentIndex, nextIndex) => {
-            console.log(nextIndex)
             setCurrentSlideIndex(nextIndex)
         }
 
@@ -28,7 +27,7 @@ function SliderStory() {
                 <Slider ref={slider}  {...settings}>
                     {sliderData.map((slide, index) => {
                         return (
-                            <div className='slide-item '>
+                            <div key={index} className='slide-item '>
                                 <img loading='lazy' src={`./src/assets/img/slide-${index + 1}.png`} alt="" />
                             </div>
                         )
@@ -47,7 +46,7 @@ function SliderStory() {
                 </div>
                 {sliderData.map((slide, index) => {
                     return (
-                        <div  onClick={() => slider?.current?.slickGoTo(index)} className='cursor-pointero page w-[25px] h-[25px] flex justify-center items-center '>
+                        <div key={index}  onClick={() => slider?.current?.slickGoTo(index)} className='cursor-pointer page w-[25px] h-[25px] flex justify-center items-center '>
                             {currentSlideIndex === index?<img loading='lazy' src='./src/assets/img/active-dot-slider.png' />:<img loading='lazy' src='./src/assets/img/dot-slider.png' />}
                   
                         </div>
