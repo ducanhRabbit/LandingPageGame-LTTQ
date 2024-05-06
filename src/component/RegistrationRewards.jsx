@@ -4,11 +4,11 @@ import useScreenSize from '../hook/useScreenSize'
 function RegistrationRewards() {
   return (
 
-    <div className={`relative mt-8`}>
+    <div className={`relative`}>
       <div >
-        <div className='anchor w-[580px] h-[684px] absolute left-1/2 -translate-x-1/2'>
-          <div className='100.000 w-[580px] h-[684px] bg-cover absolute z-50'>
-            <img loading='lazy' className='w-full h-full object-cover' src="./src/assets/img/100.000(active).png" />
+        <div className='anchor w-[574px] h-[588px] absolute left-1/2 -translate-x-1/2'>
+          <div className='100.000 w-[574px] h-[588px] bg-cover absolute z-50'>
+            <img loading='lazy' className='w-full h-full object-cover' src="./src/assets/img/nhận.png" />
           </div>
           <div className='1.000 w-[285px] h-[261px] bg-cover absolute z-30 -left-[488px] -top-[15px] '>
             <img loading='lazy' className='w-full h-full object-cover' src="./src/assets/img/1.000.png" />

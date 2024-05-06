@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
 *:focus {
   outline: 0;
   outline: none;
@@ -19,10 +20,11 @@
 }
 
 .stroke-text-active {
-  text-shadow:2px 0 0 #a6854c,0 2px 0 #a6854c,-2px 0 0 #a6854c,0 -2px 0 #a6854c;
+  text-shadow: 2px 0 0 #a6854c, 0 2px 0 #a6854c, -2px 0 0 #a6854c, 0 -2px 0 #a6854c;
 }
+
 .stroke-text {
-  text-shadow:2px 0 0 black,0 2px 0 black,-2px 0 0 black,0 -2px 0 black;
+  text-shadow: 2px 0 0 black, 0 2px 0 black, -2px 0 0 black, 0 -2px 0 black;
 }
 
 body {
@@ -36,3 +38,40 @@ body {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .shining {
+    mask-size: 300% 200%;
+    mask-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, #fff 50%, rgba(255, 255, 255, 0) 60%);
+  }
+}
+
+.main-text {
+  font-size: 76px;
+  font-family: "League Gothic", sans-serif;
+  color: transparent;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+  background-image: linear-gradient(#eee, rgba(246, 173, 11, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+/* .đã_có__________________________Chân_Vương_đăng_ {
+  font-size: 200px;
+  font-family: "League Gothic";
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: right;
+  text-shadow: 0px 3px 0px rgba(141, 83, 0, ),0px 4px 0px rgba(246, 173, 11, ),0px 3px 5.5px rgba(0, 0, 0, );
+  -moz-transform: matrix( 0.19553730790157,0,-0.02387711409172,0.19553730790157,0,0);
+  -webkit-transform: matrix( 0.19553730790157,0,-0.02387711409172,0.19553730790157,0,0);
+  -ms-transform: matrix( 0.19553730790157,0,-0.02387711409172,0.19553730790157,0,0);
+  position: absolute;
+  left: -397.447px;
+  top: 1251.5px;
+  z-index: 301;
+} */

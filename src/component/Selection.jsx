@@ -35,14 +35,14 @@ function Selection() {
     }
     return (
         <div className='w-full pb-28 relative'>
-            <div className='char-shadow absolute -top-0   right-0 -z-10'>
+            <div className='char-shadow absolute top-[48px]   right-[80px] -z-10'>
                 <img loading='lazy' src={currentActiveChar.shadowImg} />
             </div>
             <div className=' w-full absolute -bottom-[2px]'>
                 <img loading='lazy' src='./src/assets/img/UI-bottom-pg3.png' />
             </div>
-            <div className='title py-12'>
-                <img loading='lazy' className='mx-auto' src='./src/assets/img/title-pg3.png' />
+            <div className='title py-12 pt-16'>
+                <img loading='lazy' className='mx-auto' src='./src/assets/img/title-section3.png' />
             </div>
 
             <div className=' flex w-[80%] mx-auto'>
@@ -95,7 +95,7 @@ function Selection() {
                     </div>
                 </div>
                 <div className='right flex-1 relative'>
-                    <div className='mx-auto pt-[4rem]'>
+                    <div className='mx-auto'>
                         <img loading='lazy' className='w-full h-full object-cover' src={currentActiveChar.fullBodyImg} />
                     </div>
                     <div className='class absolute top-0 -right-[100px] z-10 scale-90 '>

@@ -12,8 +12,9 @@ function DownlBoard() {
             <div className='row-span-2 cursor-pointer'>
             <img loading='lazy' className='w-full h-full' src='./src/assets/img/apk.png'></img>
             </div>
-            <div className='row-span-2 cursor-pointer'>
+            <div className='row-span-2 cursor-pointer relative'>
             <img loading='lazy' className='w-full h-full' src='./src/assets/img/icon app.png'></img>
+            <img loading='lazy' className='w-full h-full absolute top-0 left-0 brightness-200 shining z-20 animate-[wave_linear_2.5s_infinite_1s]' src='./src/assets/img/icon app.png'></img>
             </div>
             <div className='cursor-pointer'><img loading='lazy' className='w-full h-full' src='./src/assets/img/googlePlay.png'></img></div>
         </div>
