@@ -16,7 +16,14 @@ export default {
       'xl': '1280px',
       // => @media (min-width: 1280px) { ... }
     },
-    extend: {},
+    extend: {
+      keyframes:{
+        wave:{
+          '0%': {"mask-position":'150% 0px'},
+          '100%': {"mask-position":'0% 0px'}
+        }
+      }
+    },
   },
   plugins: [],
 }

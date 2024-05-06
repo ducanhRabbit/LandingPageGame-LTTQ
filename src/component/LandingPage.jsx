@@ -20,35 +20,41 @@ function LandingPage() {
             <div ref={outterRef} className='outter mx-auto scroll-smooth relative w-full h-screen overflow-x-hidden'>
                 <div style={{
                     transform: `scale(${ratio})`,
-                }} className={`absolute w-[1930px] origin-top-left`}>
-                    <Navigation outterRef={outterRef} observerRefs={[bannerRef,registrationRef,selectionRef,sliderStoryRef]}/>
-                    <img loading='lazy' className='absolute w-full  object-cover -z-10' src='./src/assets/img/main-bg.png' />
-                    <section ref={bannerRef} id='Banner' className='1 relative overflow-hidden'>
+                }} className={`absolute w-[1920px] origin-top-left`}>
+                    {/* <Navigation outterRef={outterRef} observerRefs={[bannerRef,registrationRef,selectionRef,sliderStoryRef]}/> */}
+                    <img loading='lazy' className='absolute w-full   object-cover -z-10' src='./src/assets/img/main-bg.png' />
+                    <section ref={bannerRef} id='Banner' className='1 relative overflow-hidden pt-[57px] h-[1142px]'>
 
-                        <div className='w-[65%] mx-auto relative'>
-                            <img loading='lazy' className='w-full ml-4' src='./src/assets/img/main_char.png' />
-                            <div className='absolute top-0 left-0 cursor-pointer'>
+                        <div className='max-w-[1383px] mx-auto relative'>
+                            <img loading='lazy' className='w-full ml-[75px]' src='./src/assets/img/main_char.png' />
+                            <div className='absolute -top-[24px] left-[120px] cursor-pointer'>
                                 <img loading='lazy' src="./src/assets/img/logo.png" alt="" />
                             </div>
                         </div>
-                        <div className='flex flex-col items-center absolute bottom-1/2 translate-y-[calc(50%_+_4rem)] w-full'>
-                            <div className='cursor-pointer play-btn w-[160px] z-20'>
+                        <div className='flex flex-col items-center absolute bottom-[140px] w-full gap-[84px]'>
+                            <div className='cursor-pointer play-btn z-20 ml-[128px]'>
                                 <img loading='lazy' src='./src/assets/img/play_btn.png' />
                             </div>
-                            <div className='logan -my-[14rem] min-h-0 ml-20'>
+                            <div className='logan -my-[200px] min-h-0 ml-[160px]'>
                                 <img loading='lazy' className='w-full' src='./src/assets/img/tittle.png' />
                             </div>
                         </div>
-                        <div className='absolute bottom-10 w-full'>
+                        {/* <div className='absolute bottom-10 w-full'>
                             <DownlBoard />
-                        </div>
+                        </div> */}
                     </section>
-                    <section ref={registrationRef} id='Registration' className='2 relative h-[958px]'>
-                        <img loading='lazy' className='absolute -top-10 object-cover' src='./src/assets/img/la cay.png' />
+                    <section ref={registrationRef} id='Registration' className='2 relative h-[1065px] pt-[36px]'>
+                        {/* <img loading='lazy' className='absolute -top-10 object-cover' src='./src/assets/img/la cay.png' /> */}
                         <div className='title'>
-                            <img loading='lazy' className='mx-auto' src='./src/assets/img/title-pg2.png' />
+                            <img loading='lazy' className='mx-auto pl-[80px]' src='./src/assets/img/title-section2.png' />
+                        </div>
+                        <div className='sub-title mt-[16px]'>
+                            <div className='main-text'>Đã có</div>
                         </div>
                         <RegistrationRewards />
+                        <div className='absolute bottom-[28px] left-1/2 -translate-x-1/2'>
+                        <img loading='lazy' className='mx-auto pl-[80px]' src='./src/assets/img/Register-now-btn.png' />
+                        </div>
                     </section>
                     <section ref={selectionRef} id='Selection' className='3  '>
                         <Selection />
@@ -97,7 +103,7 @@ function LandingPage() {
                     </section>
                 </div>
             </div>
-            <div className='fixed w-full float top-0 z-50'>
+            {/* <div className='fixed w-full float top-0 z-50'>
                 <div style={{
                     transform: `scale(${ratio})`,
                 }} className='float-content absolute  right-0'>
@@ -106,7 +112,7 @@ function LandingPage() {
                     </a>
 
                 </div>
-            </div>
+            </div> */}
         </>
 
     )

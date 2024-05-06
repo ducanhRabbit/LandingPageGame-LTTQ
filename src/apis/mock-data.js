@@ -8,8 +8,8 @@ export const mockData = {
             classImg: './src/assets/img/Ngo.png',
             selectImg: './src/assets/img/TT-select.png',
             offImg: './src/assets/img/TT-off.png',
-            fullBodyImg: './src/assets/img/tao-thao.png',
-            shadowImg: './src/assets/img/TT-shadow-1.png'
+            fullBodyImg: './src/assets/img/GiaCatLuong.png',
+            shadowImg: './src/assets/img/GiaCatLuong-shadow.png'
         },
         {
             _id:'char-id-2',
@@ -19,8 +19,8 @@ export const mockData = {
             classImg: './src/assets/img/Thuc.png',
             selectImg: './src/assets/img/TK-select.png',
             offImg: './src/assets/img/TK-off.png',
-            fullBodyImg: './src/assets/img/ton-kien.png',
-            shadowImg: './src/assets/img/TK-shadow-1.png'
+            fullBodyImg: './src/assets/img/LuBo.png',
+            shadowImg: './src/assets/img/LuBo-shadow.png'
         },
         {
             _id:'char-id-3',
@@ -30,8 +30,8 @@ export const mockData = {
             classImg: './src/assets/img/Ngo.png',
             selectImg: './src/assets/img/qv-select.png',
             offImg: './src/assets/img/qv-off.png',
-            fullBodyImg: './src/assets/img/quan-vu.png',
-            shadowImg: './src/assets/img/QV-shadow-1.png'
+            fullBodyImg: './src/assets/img/TieuKieu.png',
+            shadowImg: './src/assets/img/TieuKieu-shadow.png'
         },
         {
             _id:'char-id-4',
@@ -41,8 +41,8 @@ export const mockData = {
             classImg: './src/assets/img/Ngo.png',
             selectImg: './src/assets/img/DT-select.png',
             offImg: './src/assets/img/DT-off.png',
-            fullBodyImg: './src/assets/img/dieu-thuyen.png',
-            shadowImg: './src/assets/img/DT-shadow-1.png'
+            fullBodyImg: './src/assets/img/QuachGia.png',
+            shadowImg: './src/assets/img/QuachGia-shadow.png'
         },
         {
             _id:'char-id-5',
