@@ -44,7 +44,7 @@ function LandingPage() {
                         </div> */}
                     </section>
                     <section ref={registrationRef} id='Registration' className='2 relative h-[1065px] pt-[36px]'>
-                        {/* <img loading='lazy' className='absolute -top-10 object-cover' src='./src/assets/img/la cay.png' /> */}
+                        <img loading='lazy' className='absolute -top-10 object-cover' src='./src/assets/img/la cay.png' />
                         <div className='title'>
                             <img loading='lazy' className='mx-auto pl-[80px]' src='./src/assets/img/title-section2.png' />
                         </div>
@@ -62,10 +62,13 @@ function LandingPage() {
                     </section>
                     <section ref={sliderStoryRef} id='SliderStory' className='4 relative border-none'>
                         <div className='background'>
-                            <img loading='lazy' className='w-full object-cover' src='./src/assets/img/BG-pg4.png' />
+                            <img loading='lazy' className='w-full object-cover' src='./src/assets/img/bg-section4.png' />
                         </div>
-                        <div className='content absolute top-0 w-full'>
-                            <div className='w-[900px] h-[500px] mt-[320px] relative mx-auto'>
+                        <div className='title absolute top-0 left-1/2 -translate-x-1/2'>
+                            <img loading='lazy' className='mx-auto pl-[80px]' src='./src/assets/img/title-section4.png' />
+                        </div>
+                        <div className='content absolute top-[215px] left-[266px]'>
+                            <div className='w-[1430px] h-[710px] py-[34px] relative '>
                                 <SliderStory />
                             </div>
                         </div>
