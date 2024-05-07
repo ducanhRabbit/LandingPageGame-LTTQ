@@ -35,18 +35,18 @@ function Selection() {
     }
     return (
         <div className='w-full pb-28 relative'>
-            <div className='char-shadow absolute top-[48px]   right-[80px] -z-10'>
+            <div className='char-shadow absolute top-[48px] right-0 -z-10'>
                 <img loading='lazy' src={currentActiveChar.shadowImg} />
             </div>
             <div className=' w-full absolute -bottom-[2px]'>
                 <img loading='lazy' src='./src/assets/img/UI-bottom-pg3.png' />
             </div>
-            <div className='title py-12 pt-16'>
+            <div className='title pb-[80px] pt-16'>
                 <img loading='lazy' className='mx-auto' src='./src/assets/img/title-section3.png' />
             </div>
 
             <div className=' flex w-[80%] mx-auto'>
-                <div className='left w-[50%] px-24 flex flex-col gap-16 items-center'>
+                <div className='left w-[50%] flex flex-col gap-4 items-center'>
                     <div className='char-info w-[500px] relative flex flex-col text-black'>
                         <div className='text-[3rem] relative py-6'>
                             THẦN - {currentActiveChar.name}
@@ -62,19 +62,19 @@ function Selection() {
 
                     </div>
                     <div className='selection'>
-                        <div className='wrapper  w-[500px] mx-auto relative '>
-                            <img loading='lazy' className='absolute w-full object-cover z-0 h-full top-0 right-0 scale-x-[1.12] scale-y-[.8]' src='./src/assets/img/light.png' />
-                            <div className='clickable grid grid-cols-5 absolute'>
+                        <div className='wrapper relative '>
+                            {/* <img loading='lazy' className='absolute w-full object-cover z-0 h-full top-0 right-0 scale-x-[1.12] scale-y-[.8]' src='./src/assets/img/light.png' /> */}
+                            <div className='clickable grid grid-cols-6 w-full absolute'>
                                 {characters.map((char, index) => {
                                     return (
                                         <div key={char._id} onClick={() => {
                                             const findChar = getCharById(char._id)
                                             setCurrentActiveChar(findChar)
-                                        }} className='w-[100px] h-[430px] cursor-pointer'></div>
+                                        }} className='w-full h-[430px] cursor-pointer'></div>
                                     )
                                 })}
                             </div>
-                            <div className='background grid grid-cols-5'>
+                            <div className='background grid grid-cols-6'>
                                 {characters.map((char, index) => {
                                     const isActive = char._id === currentActiveChar._id
                                     return (
@@ -95,10 +95,10 @@ function Selection() {
                     </div>
                 </div>
                 <div className='right flex-1 relative'>
-                    <div className='mx-auto'>
+                    <div className='pt-[24px]'>
                         <img loading='lazy' className='w-full h-full object-cover' src={currentActiveChar.fullBodyImg} />
                     </div>
-                    <div className='class absolute top-0 -right-[100px] z-10 scale-90 '>
+                    <div className='class absolute -top-[30px] -right-[40px] z-10 scale-90 '>
                         <img loading='lazy' src={currentActiveChar.classImg} />
                     </div>
 

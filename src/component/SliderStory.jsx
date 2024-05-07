@@ -5,25 +5,67 @@ import Slider from 'react-slick'
 
 function SliderStory() {
     const sliderData = [...Array(7)]
-    const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
-    const slider = useRef(null)
-    const settings = {
-        dots: false,
-        fade: true,
-        infinite: true,
-        speed: 500,
-        arrows: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        waitForAnimate: false,
-        beforeChange: (currentIndex, nextIndex) => {
-            setCurrentSlideIndex(nextIndex)
-        }
+    // const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
+    // const slider = useRef(null)
+    // const settings = {
+    //     dots: false,
+    //     fade: true,
+    //     infinite: true,
+    //     speed: 500,
+    //     arrows: false,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     waitForAnimate: false,
+    //     beforeChange: (currentIndex, nextIndex) => {
+    //         setCurrentSlideIndex(nextIndex)
+    //     }
 
-    };
+    // };
     return (
-        <div className='slider'>
-            <div className='wrapper ml-8'>
+        <div className='slider px-[80px] h-full'>
+            <swiper-container
+                class="mySwiper " effect="coverflow" grab-cursor="true" centered-slides="true"
+                slides-per-view="auto" coverflow-effect-stretch="0" coverflow-effect-depth="300" coverflow-effect-rotate="0"
+                coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true"
+                navigation-next-el='.next-btn'
+                navigation-prev-el='.prev-btn'
+                pagination-el='pagination'
+            >
+                <swiper-slide lazy="true">
+                    <img className='mx-auto object-cover' loading="lazy" src='./src/assets/img/slider-1.png' />
+                </swiper-slide>
+                <swiper-slide lazy="true">
+                    <img className='mx-auto object-cover' loading="lazy" src='./src/assets/img/slider-2.png' />
+                </swiper-slide>
+                <swiper-slide lazy="true">
+                    <img className='mx-auto object-cover' loading="lazy" src='./src/assets/img/slider-3.png' />
+                </swiper-slide>
+                <swiper-slide lazy="true">
+                    <img className='mx-auto object-cover' loading="lazy" src='./src/assets/img/slider-4.png' />
+                </swiper-slide>
+                <swiper-slide lazy="true">
+                    <img className='mx-auto object-cover' loading="lazy" src='./src/assets/img/slider-5.png' />
+                </swiper-slide>
+            </swiper-container>
+            <div className='control'>
+                <div className='prev-btn absolute top-1/2 left-6 cursor-pointer'>
+                    <img loading='lazy' src='./src/assets/img/prev-slider.png' />
+                </div>
+                <div className='next-btn absolute top-1/2 right-6 cursor-pointer'>
+                    <img loading='lazy' src='./src/assets/img/next-slide.png' />
+                </div>
+            </div>
+            <div className='pagination'>
+
+            </div>
+        </div>
+    )
+}
+
+export default SliderStory
+
+
+{/* <div className='wrapper ml-8'>
                 <Slider ref={slider}  {...settings}>
                     {sliderData.map((slide, index) => {
                         return (
@@ -52,9 +94,4 @@ function SliderStory() {
                         </div>
                     )
                 })}
-            </div>
-        </div>
-    )
-}
-
-export default SliderStory
+            </div> */}
