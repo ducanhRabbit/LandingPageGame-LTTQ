@@ -71,3 +71,18 @@ swiper-slide {
   height: 100%;
 }
 
+.myBullet{
+  display: block;
+  width: 27px;
+  height: 29px;
+  background-image: url('./src/assets/img/dot-slider.png');
+}
+
+.myActiveBullet{
+  display: block;
+  width: 25px;
+  height: 26px;
+  background-image: url('./src/assets/img/active-dot-slider.png');
+  transform: scale(1.6);
+}
+

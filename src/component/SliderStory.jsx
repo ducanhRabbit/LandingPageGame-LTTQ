@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Slider from 'react-slick'
 
 function SliderStory() {
-    const sliderData = [...Array(7)]
+    const sliderData = [...Array(5)]
     // const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
     // const slider = useRef(null)
     // const settings = {
@@ -21,15 +21,24 @@ function SliderStory() {
     //     }
 
     // };
+
     return (
         <div className='slider px-[80px] h-full'>
             <swiper-container
+
                 class="mySwiper " effect="coverflow" grab-cursor="true" centered-slides="true"
                 slides-per-view="auto" coverflow-effect-stretch="0" coverflow-effect-depth="300" coverflow-effect-rotate="0"
-                coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true"
+                coverflow-effect-modifier="1" coverflow-effect-slide-shadows='true'
                 navigation-next-el='.next-btn'
                 navigation-prev-el='.prev-btn'
-                pagination-el='pagination'
+                initial-slide='2'
+                pagination='true'
+                pagination-el='.pagination'
+                pagination-bullet-class='myBullet'
+                pagination-bullet-active-class='myActiveBullet'
+                pagination-clickable='true'
+                
+
             >
                 <swiper-slide lazy="true">
                     <img className='mx-auto object-cover' loading="lazy" src='./src/assets/img/slider-1.png' />
@@ -55,9 +64,11 @@ function SliderStory() {
                     <img loading='lazy' src='./src/assets/img/next-slide.png' />
                 </div>
             </div>
-            <div className='pagination'>
-
+     
+            <div className='pagination flex items-center left-[480px] gap-[90px] justify-center absolute z-10 -bottom-[44px]'>
             </div>
+            <div className='track w-[480px] absolute border-dotted -bottom-[30px] left-[484px] border-[#fbf2a7] border-t-4 '></div>
+                
         </div>
     )
 }
