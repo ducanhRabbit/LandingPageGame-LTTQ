@@ -23,15 +23,15 @@ function Navigation({observerRefs, outterRef}) {
     },[])
     return (
         <div className='navigation absolute h-[calc(100%_-_620px)] pb-[505px] top-[320px] left-[90px] '>
-            <div className='sticky flex flex-col gap-12 top-[320px] z-50'>
+            <div className='sticky flex flex-col gap-[20px] top-[320px] z-50'>
 
-                <div className='w-[346px]  left-[21px] absolute -z-10 border-dotted border-[#cacdcd] opacity-90 border-t-4 origin-left rotate-90 -top-[18px]'></div>
+                <div className='w-[318px]  left-[21px] absolute -z-10 border-dotted border-[#cacdcd] opacity-90 border-t-4 origin-left rotate-90 -top-[18px]'></div>
                 <a href='#Banner' className=' block cursor-pointer'>
                     <div className='flex items-center gap-4'>
                         <div className='w-[42px]'>
                             {sectionIdOnScreen === 'Banner'?<img className='w-full h-full object-cover' src='./src/assets/img/navigate-active.png' />:<img className='w-full h-full object-cover' src='./src/assets/img/navigate-unactive.png' />}
                         </div>
-                        <div className={`${sectionIdOnScreen === 'Banner'?'stroke-text-active':'stroke-text'} text-3xl font-semibold`}>Trang Chủ</div>
+                        <div className={`${sectionIdOnScreen === 'Banner'?'stroke-text-active':'stroke-text'} text-2xl font-semibold`}>Trang Chủ</div>
                     </div>
                 </a>
                 <a href='#Registration' className='cursor-pointer'>
@@ -39,7 +39,7 @@ function Navigation({observerRefs, outterRef}) {
                         <div className='w-[42px]'>
                         {sectionIdOnScreen === 'Registration'?<img className='w-full h-full object-cover' src='./src/assets/img/navigate-active.png' />:<img className='w-full h-full object-cover' src='./src/assets/img/navigate-unactive.png' />}
                         </div>
-                        <span className={`${sectionIdOnScreen === 'Registration'?'stroke-text-active':'stroke-text'} text-3xl font-semibold`}>Đăng Ký Trước</span>
+                        <span className={`${sectionIdOnScreen === 'Registration'?'stroke-text-active':'stroke-text'} text-2xl font-semibold`}>Đăng Ký Trước <br></br> Nhận Quà</span>
                     </div>
                 </a>
                 <a href='#Selection' className='cursor-pointer'>
@@ -47,7 +47,7 @@ function Navigation({observerRefs, outterRef}) {
                         <div className='w-[42px]'>
                         {sectionIdOnScreen === 'Selection'?<img className='w-full h-full object-cover' src='./src/assets/img/navigate-active.png' />:<img className='w-full h-full object-cover' src='./src/assets/img/navigate-unactive.png' />}
                         </div>
-                        <span className={`${sectionIdOnScreen === 'Selection'?'stroke-text-active':'stroke-text'} text-3xl font-semibold`}>Tính Năng</span>
+                        <span className={`${sectionIdOnScreen === 'Selection'?'stroke-text-active':'stroke-text'} text-2xl font-semibold`}>Lục Phái <br></br>Danh Tướng</span>
                     </div>
                 </a>
                 <a href='#SliderStory' className='cursor-pointer'>
@@ -55,7 +55,7 @@ function Navigation({observerRefs, outterRef}) {
                         <div className='w-[42px]'>
                         {sectionIdOnScreen === 'SliderStory'?<img className='w-full h-full object-cover' src='./src/assets/img/navigate-active.png' />:<img className='w-full h-full object-cover' src='./src/assets/img/navigate-unactive.png' />}
                         </div>
-                        <span className={`${sectionIdOnScreen === 'SliderStory'?'stroke-text-active':'stroke-text'} text-3xl font-semibold`}>Tính Năng</span>
+                        <span className={`${sectionIdOnScreen === 'SliderStory'?'stroke-text-active':'stroke-text'} text-2xl font-semibold`}>Lục Phái <br></br>Đặc Sắc</span>
                     </div>
                 </a>
             </div>

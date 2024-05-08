@@ -8,26 +8,27 @@ import SliderStory from './SliderStory'
 import Navigation from './Navigation'
 
 function LandingPage() {
-    const { screenWidth, screenHeight } = useScreenSize()
-    const ratio = screenWidth / 1920
+    const { screenWidth, screenHeight,isMobile } = useScreenSize()
+    const ratio = screenWidth / (isMobile?768:1920)
     const bannerRef = useRef(null)
     const registrationRef = useRef(null)
     const selectionRef = useRef(null)
     const sliderStoryRef = useRef(null)
     const outterRef = useRef(null)
+
     return (
         <>
             <div ref={outterRef} className='outter mx-auto scroll-smooth relative w-full h-screen overflow-x-hidden'>
                 <div style={{
                     transform: `scale(${ratio})`,
-                }} className={`absolute w-[1920px] origin-top-left`}>
+                }} className={`absolute md:w-[1920px] w-[768px] origin-top-left`}>
                     {/* <Navigation outterRef={outterRef} observerRefs={[bannerRef,registrationRef,selectionRef,sliderStoryRef]}/> */}
                     <img loading='lazy' className='absolute w-full   object-cover -z-10' src='./src/assets/img/main-bg.png' />
-                    <section ref={bannerRef} id='Banner' className='1 relative overflow-hidden pt-[57px] h-[1142px]'>
+                    <section ref={bannerRef} id='Banner' className='1 relative overflow-hidden  md:pt-[57px] md:h-[1142px]'>
 
-                        <div className='max-w-[1383px] mx-auto relative'>
-                            <img loading='lazy' className='w-full ml-[75px]' src='./src/assets/img/main_char.png' />
-                            <div className='absolute -top-[24px] left-[120px] cursor-pointer'>
+                        <div className='max-w-[1383px] w-[90%] mx-auto relative'>
+                            <img loading='lazy' className='w-full md:ml-[75px]' src='./src/assets/img/main_char.png' />
+                            <div className='logo absolute  -top-[24px] left-[120px] cursor-pointer'>
                                 <img loading='lazy' src="./src/assets/img/logo.png" alt="" />
                             </div>
                         </div>
@@ -43,7 +44,7 @@ function LandingPage() {
                             <DownlBoard />
                         </div> */}
                     </section>
-                    <section ref={registrationRef} id='Registration' className='2 relative h-[1065px] pt-[36px]'>
+                    <section ref={registrationRef} id='Registration' className='2 relative md:h-[1065px] pt-[36px]'>
                         <img loading='lazy' className='absolute -top-10 object-cover' src='./src/assets/img/la cay.png' />
                         <div className='title'>
                             <img loading='lazy' className='mx-auto pl-[80px]' src='./src/assets/img/title-section2.png' />
@@ -107,12 +108,20 @@ function LandingPage() {
                 </div>
             </div>
             {/* <div className='fixed w-full float top-0 z-50'>
-                <div style={{
-                    transform: `scale(${ratio})`,
-                }} className='float-content absolute  right-0'>
-                    <a className='absolute inline-block w-[150px] right-16 top-[350px]' href=''>
-                        <img loading='lazy' src='./src/assets/img/registration.png' />
-                    </a>
+                <div className='float-content absolute right-[2%] top-[120px] scale-[.85] origin-top-right'>
+                        <img className='' src='./src/assets/img/download-right-float-bg.png'></img>
+                        <div className='flex flex-col w-full absolute top-[155px] justify-center items-center'>
+                            <img className='mb-[36px]'  src='./src/assets/img/Qr.png'></img>
+                            <img className='mb-[21px]' src='./src/assets/img/android.png'></img>
+                            <img className='mb-[21px]' src='./src/assets/img/ios.png'></img>
+                            <img className='mb-[4px]' src='./src/assets/img/apk1.png'></img>
+                            <img className='mb-[4px]' src='./src/assets/img/group.png'></img>
+                            <img className='mb-[4px]' src='./src/assets/img/fanpage.png'></img>
+                            <img className='' src='./src/assets/img/nap ngay.png'></img>
+
+                        </div>
+
+
 
                 </div>
             </div> */}
