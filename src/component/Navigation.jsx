@@ -22,7 +22,7 @@ function Navigation({observerRefs, outterRef}) {
         return ()=> {outterRef?.current?.removeEventListener('scroll',handleSpyScroll)}
     },[])
     return (
-        <div className='navigation absolute h-[calc(100%_-_620px)] pb-[505px] top-[320px] left-[90px] '>
+        <div className='navigation absolute h-[calc(100%_-_620px)] pb-[505px] top-[320px] left-[90px] md:block hidden'>
             <div className='sticky flex flex-col gap-[20px] top-[320px] z-50'>
 
                 <div className='w-[318px]  left-[21px] absolute -z-10 border-dotted border-[#cacdcd] opacity-90 border-t-4 origin-left rotate-90 -top-[18px]'></div>

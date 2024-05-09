@@ -6,24 +6,24 @@ function Selection() {
 
     const [currentActiveChar, setCurrentActiveChar] = useState(characters[2])
 
-    const handleNextBtn = ()=>{
-        const currentIndex = characters.findIndex((char)=> char === currentActiveChar)
+    const handleNextBtn = () => {
+        const currentIndex = characters.findIndex((char) => char === currentActiveChar)
 
-        if(currentIndex !== characters.length -1){
+        if (currentIndex !== characters.length - 1) {
             const nextIndex = currentIndex + 1
             setCurrentActiveChar(characters[nextIndex])
-        }else{
+        } else {
             setCurrentActiveChar(characters[0])
         }
     }
 
-    const handlePrevBtn = ()=>{
-        const currentIndex = characters.findIndex((char)=> char === currentActiveChar)
+    const handlePrevBtn = () => {
+        const currentIndex = characters.findIndex((char) => char === currentActiveChar)
 
-        if(currentIndex !== 0){
+        if (currentIndex !== 0) {
             const nextIndex = currentIndex - 1
             setCurrentActiveChar(characters[nextIndex])
-        }else{
+        } else {
             setCurrentActiveChar(characters[characters.length - 1])
         }
     }
@@ -35,33 +35,33 @@ function Selection() {
     }
     return (
         <div className='w-full pb-28 relative'>
-            <div className='char-shadow absolute top-[48px] right-0 -z-10'>
+            <div className='char-shadow absolute w-full md:w-auto -right-[100px] top-[160px] md:top-[48px] md:right-0 -z-10'>
                 <img loading='lazy' src={currentActiveChar.shadowImg} />
             </div>
             <div className=' w-full absolute -bottom-[2px]'>
                 <img loading='lazy' src='./src/assets/img/UI-bottom-pg3.png' />
             </div>
-            <div className='title pb-[80px] pt-16'>
+            <div className='title mx-auto w-[500px] py-[12px] md:w-auto md:pb-[80px] md:pt-16'>
                 <img loading='lazy' className='mx-auto' src='./src/assets/img/title-section3.png' />
             </div>
 
-            <div className=' flex w-[80%] mx-auto'>
-                <div className='left w-[50%] flex flex-col gap-4 items-center'>
-                    <div className='char-info w-[500px] relative flex flex-col text-black'>
-                        <div className='text-[3rem] relative py-6'>
-                            THẦN - {currentActiveChar.name}
+            <div className=' flex flex-col gap-4 mx-auto md:gap-0 w-full md:flex-row md:w-[80%] px-[16px]'>
+                <div className='left md:w-[50%] flex flex-col gap-4 md:items-center'>
+                    <div className='char-info w-[50%] md:w-[500px] relative flex flex-col text-black'>
+                        <div className='text-[2rem] md:text-[3rem] relative py-6'>
+                            <b>THẦN</b> - {currentActiveChar.name}
                             <div className='w-full h-[2px] bg-black absolute bottom-6 translate-y-1/2'></div>
                             <div className='w-[10px] h-[10px] absolute bottom-6 translate-y-1/2 bg-black rotate-45'></div>
-                            <div className='absolute -right-10 top-1/2 -translate-y-1/2 translate-x-1/2'>
+                            <div className='absolute w-[100px] -right-10 top-1/2 -translate-y-1/2 translate-x-1/2'>
                                 <img loading='lazy' src="./src/assets/img/Rare.png" alt="" />
                             </div>
                         </div>
-                        <div className='text-justify leading-7'>
+                        <div className='text-[1.1rem] text-justify leading-7'>
                             {currentActiveChar.description}
                         </div>
 
                     </div>
-                    <div className='selection'>
+                    <div className='selection hidden md:block'>
                         <div className='wrapper relative '>
                             {/* <img loading='lazy' className='absolute w-full object-cover z-0 h-full top-0 right-0 scale-x-[1.12] scale-y-[.8]' src='./src/assets/img/light.png' /> */}
                             <div className='clickable grid grid-cols-6 w-full absolute'>
@@ -95,11 +95,19 @@ function Selection() {
                     </div>
                 </div>
                 <div className='right flex-1 relative'>
-                    <div className='pt-[24px]'>
-                        <img loading='lazy' className='w-full h-full object-cover' src={currentActiveChar.fullBodyImg} />
+                    <div className='pt-[24px] w-[90%] mx-auto'>
+                        <img loading='lazy' className='w-full h-full scale-110 object-cover' src={currentActiveChar.fullBodyImg} />
                     </div>
-                    <div className='class absolute -top-[30px] -right-[40px] z-10 scale-90 '>
+                    <div className='class absolute w-[131px] md:w-auto top-[30px] right-[90px] md:-top-[30px] md:-right-[40px] z-10 md:scale-90 '>
                         <img loading='lazy' src={currentActiveChar.classImg} />
+                    </div>
+                    <div className='control-mobile block md:hidden'>
+                        <div onClick={handlePrevBtn} className='prev-btn absolute top-1/2'>
+                            <img loading='lazy' src='./src/assets/img/prev-btn.png' />
+                        </div>
+                        <div onClick={handleNextBtn} className='next-btn absolute top-1/2 right-0'>
+                            <img loading='lazy' src='./src/assets/img/right-btn.png' />
+                        </div>
                     </div>
 
                 </div>

@@ -13,6 +13,8 @@ export default {
       'md': '769px',
 
       'sm': '639px',
+      
+      'xs': '477px'
     },
     extend: {
       keyframes:{
