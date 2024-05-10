@@ -46,9 +46,8 @@ function LandingPage() {
                         style={{
                             transform: `scale(${ratio})`,
                         }}
-                        className={`absolute overflow-hidden md:w-[1920px] w-[768px]  md:mt-0 origin-top-left`}
+                        className={`absolute overflow-clip md:w-[1920px] w-[768px]  md:mt-0 origin-top-left`}
                     >
-
                         <Navigation outterRef={outterRef} observerRefs={[bannerRef, registrationRef, selectionRef, sliderStoryRef]} />
                         <img
                             loading="lazy"
@@ -111,9 +110,12 @@ function LandingPage() {
                                     src="./src/assets/img/title-section2.png"
                                 />
                             </div>
-                            <div className="sub-title  mt-[16px]">
-                                <div className="main-text">
-                                    <img className="mx-auto" src="./src/assets/img/sub-title-regis.png"/>
+                            <div className="sub-title relative mt-[16px]">
+                                <div className="text w-[374px] relative mx-auto md:w-auto">
+                                    <img className="mx-auto" src="./src/assets/img/sub-title-regis.png" />
+                                </div>
+                                <div className="absolute w-[117px] md:w-[171px] top-[10px] left-[calc(50%_-_130px)] md:left-[calc(50%_-_194px)]">
+                                    <img className="w-full object-cover" src="./src/assets/img/5.000.png" />
                                 </div>
                             </div>
                             <RegistrationRewards />

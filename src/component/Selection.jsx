@@ -63,7 +63,7 @@ function Selection() {
                     </div>
                     <div className='selection hidden md:block'>
                         <div className='wrapper relative '>
-                            {/* <img loading='lazy' className='absolute w-full object-cover z-0 h-full top-0 right-0 scale-x-[1.12] scale-y-[.8]' src='./src/assets/img/light.png' /> */}
+                            <img loading='lazy' className='absolute w-full object-cover z-0 h-full scale-x-110 scale-y-[.9] top-0 right-0' src='./src/assets/img/light.png' />
                             <div className='clickable grid grid-cols-6 w-full absolute'>
                                 {characters.map((char, index) => {
                                     return (
