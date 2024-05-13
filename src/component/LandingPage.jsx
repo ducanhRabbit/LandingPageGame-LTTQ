@@ -7,29 +7,48 @@ import Slider from "react-slick";
 import SliderStory from "./SliderStory";
 import Navigation from "./Navigation";
 import { FiMenu } from "react-icons/fi";
+import { useInView } from "react-intersection-observer";
+import SocialBoardRelease from "./SocialBoardRelease";
+import SocialBoardPreRelease from "./SocialBoardPreRelease";
 function LandingPage() {
     const { screenWidth, screenHeight, isMobile } = useScreenSize();
     const ratio = screenWidth / (isMobile ? 768 : 1920);
-    const bannerRef = useRef(null);
-    const registrationRef = useRef(null);
-    const selectionRef = useRef(null);
-    const sliderStoryRef = useRef(null);
+    // const bannerRef = useRef(null);
+    // const registrationRef = useRef(null);
+    // const selectionRef = useRef(null);
+    // const sliderStoryRef = useRef(null);
     const outterRef = useRef(null);
-
+    const {ref:bannerRef,inView:bannerInView} = useInView({
+        /* Optional options */
+        threshold: 0.4,
+      })
+    const {ref:registrationRef,inView:registrationInView} = useInView({
+        /* Optional options */
+        threshold: 0.4,
+      })
+    const {ref:selectionRef,inView:selectionInView} = useInView({
+        /* Optional options */
+        threshold: 0.4,
+      })
+    const {ref:sliderStoryRef,inView:sliderStoryInView} = useInView({
+        /* Optional options */
+        threshold: 0.4,
+      })
     return (
         <>
             <div
                 ref={outterRef}
                 className="outter mx-auto scroll-smooth relative w-full h-screen overflow-x-hidden"
             >
+                    
                 <header className="flex fixed max-h-[120px]  w-full z-50 top-0 right-0 justify-between py-[12px] px-[14px] bg-black md:hidden">
                     <div className="flex items-center gap-[10px]">
-                        <img className="w-[53px] xs:w-[80px] sm:w-auto" src="./src/assets/img/logo-mobile.png"></img>
+                        <img className="w-[53px] xs:w-[80px] sm:w-[100px] rounded-[16px] border-[2px] border-white" src="./src/assets/img/logo-mobile.png"></img>
                         <div className="flex flex-col gap-1">
                             <div className="text-[12px] xs:text-[16px] sm:text-[24px] text-[#f3e492]">
                                 Lục Tung Tam Quốc
                             </div>
-                            <div className="text-[10px] xs:text-[12px] sm:text-[16px]">Alpha Test 15/06 - Open Beta 30/06</div>
+                            <div className="text-[10px] xs:text-[12px] sm:text-[16px]">Open Beta 30/06</div>
                         </div>
                     </div>
                     <div className="flex items-center  justify-center gap-2">
@@ -41,14 +60,14 @@ function LandingPage() {
                         </button>
                     </div>
                 </header>
-                <div className="wrapper mt-[80px] md:mt-0">
+                <div className="wrapper mt-[80px] xs:mt-[100px] md:mt-0">
                     <div
                         style={{
                             transform: `scale(${ratio})`,
                         }}
                         className={`absolute overflow-clip md:w-[1920px] w-[768px]  md:mt-0 origin-top-left`}
                     >
-                        <Navigation outterRef={outterRef} observerRefs={[bannerRef, registrationRef, selectionRef, sliderStoryRef]} />
+                        <Navigation bannerInView={bannerInView} registrationInView={registrationInView} selectionInView={selectionInView} sliderStoryInView={sliderStoryInView} />
                         <img
                             loading="lazy"
                             className="absolute w-full hidden md:block  object-cover -z-10"
@@ -193,43 +212,12 @@ function LandingPage() {
                     </div>
                 </div>
                 <div className='fixed w-full float top-0 z-50'>
-                    <div className='float-content absolute right-[2%] top-[120px] md:scale-[.6] xl:scale-[.8] origin-top-right hidden md:block'>
-                        <img className='' src='./src/assets/img/download-right-float-bg.png'></img>
-                        <div className='flex flex-col w-full absolute top-[155px] justify-center items-center'>
-                            <a href="#">
-                                <img className='mb-[36px]' src='./src/assets/img/Qr.png'></img>
-                            </a>
-                            <a href="#">
-                                <img className='mb-[21px]' src='./src/assets/img/android.png'></img>
-                            </a>
-                            <a href="#">
-                                <img className='mb-[21px]' src='./src/assets/img/ios.png'></img>
-
-                            </a>
-                            <a href="#">
-                                <img className='mb-[4px]' src='./src/assets/img/apk1.png'></img>
-
-                            </a>
-                            <a href="#">
-                                <img className='mb-[4px]' src='./src/assets/img/group.png'></img>
-
-                            </a>
-                            <a href="#">
-                                <img className='mb-[4px]' src='./src/assets/img/fanpage.png'></img>
-
-                            </a>
-                            <a href="#">
-                                <img className='' src='./src/assets/img/nap ngay.png'></img>
-
-                            </a>
-
-
-                        </div>
-
-
-
-                    </div>
+                   {/* <SocialBoardRelease/> */}
+                   <SocialBoardPreRelease/>
+                    
                 </div>
+
+
             </div>
         </>
     );

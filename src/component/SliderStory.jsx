@@ -18,7 +18,7 @@ function SliderStory() {
                 css-mode='false'
                 initial-slide='2'
                 autoplay='true'
-                autoplay-deplay = '1000'
+                autoplay-deplay = '5000'
                 pagination='true'
                 pagination-el='.pagination'
                 pagination-bullet-class='myBullet'
@@ -29,23 +29,23 @@ function SliderStory() {
             >
                 <swiper-slide class='w-[585px] md:w-auto'>
                     <div className=''>
-                        <img className='' src='./src/assets/img/slider-1.png' />
+                        <img className='w-full' src='./src/assets/img/slider-1.png' />
 
                     </div>
                 </swiper-slide>
                 <swiper-slide class='w-[585px] md:w-auto'>
                     <div className=''>
-                        <img className='' src='./src/assets/img/slider-2.png' />
+                        <img className='w-full' src='./src/assets/img/slider-2.png' />
                     </div>
                 </swiper-slide>
                 <swiper-slide class='w-[585px] md:w-auto'>
                     <div className=''>
-                        <img className='' src='./src/assets/img/slider-3.png' />
+                        <img className='w-full' src='./src/assets/img/slider-3.png' />
                     </div>
                 </swiper-slide>
                 <swiper-slide class='w-[585px] md:w-auto'>
                     <div className=''>
-                        <img className='' src='./src/assets/img/slider-4.png' />
+                        <img className='w-full' src='./src/assets/img/slider-4.png' />
                     </div>
                 </swiper-slide>
                 <swiper-slide class='w-[585px] md:w-auto'>
