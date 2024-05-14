@@ -6,14 +6,12 @@ export default {
   ],
   theme: {
     screens: {
+      'xxxl':'1600px',
+      'xxl': '1400px',
       'xl': '1279px',
-
       'lg': '1023px',
-
       'md': '769px',
-
       'sm': '639px',
-      
       'xs': '477px'
     },
     extend: {

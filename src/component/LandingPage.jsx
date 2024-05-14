@@ -1,46 +1,32 @@
 import React, { useRef, useState } from "react";
-import DownlBoard from "./DownlBoard";
 import RegistrationRewards from "./RegistrationRewards";
 import Selection from "./Selection";
 import useScreenSize from "../hook/useScreenSize";
-import Slider from "react-slick";
 import SliderStory from "./SliderStory";
 import Navigation from "./Navigation";
 import { FiMenu } from "react-icons/fi";
 import { useInView } from "react-intersection-observer";
-import SocialBoardRelease from "./SocialBoardRelease";
 import SocialBoardPreRelease from "./SocialBoardPreRelease";
 function LandingPage() {
     const { screenWidth, screenHeight, isMobile } = useScreenSize();
     const ratio = screenWidth / (isMobile ? 768 : 1920);
-    // const bannerRef = useRef(null);
-    // const registrationRef = useRef(null);
-    // const selectionRef = useRef(null);
-    // const sliderStoryRef = useRef(null);
-    const outterRef = useRef(null);
-    const {ref:bannerRef,inView:bannerInView} = useInView({
-        /* Optional options */
+    const { ref: bannerRef, inView: bannerInView } = useInView({
         threshold: 0.4,
-      })
-    const {ref:registrationRef,inView:registrationInView} = useInView({
-        /* Optional options */
+    })
+    const { ref: registrationRef, inView: registrationInView } = useInView({
         threshold: 0.4,
-      })
-    const {ref:selectionRef,inView:selectionInView} = useInView({
-        /* Optional options */
+    })
+    const { ref: selectionRef, inView: selectionInView } = useInView({
         threshold: 0.4,
-      })
-    const {ref:sliderStoryRef,inView:sliderStoryInView} = useInView({
-        /* Optional options */
+    })
+    const { ref: sliderStoryRef, inView: sliderStoryInView } = useInView({
         threshold: 0.4,
-      })
+    })
     return (
         <>
             <div
-                ref={outterRef}
                 className="outter mx-auto scroll-smooth relative w-full h-screen overflow-x-hidden"
             >
-                    
                 <header className="flex fixed max-h-[120px]  w-full z-50 top-0 right-0 justify-between py-[12px] px-[14px] bg-black md:hidden">
                     <div className="flex items-center gap-[10px]">
                         <img className="w-[53px] xs:w-[80px] sm:w-[100px] rounded-[16px] border-[2px] border-white" src="./src/assets/img/logo-mobile.png"></img>
@@ -67,7 +53,7 @@ function LandingPage() {
                         }}
                         className={`absolute overflow-clip md:w-[1920px] w-[768px]  md:mt-0 origin-top-left`}
                     >
-                        <Navigation bannerInView={bannerInView} registrationInView={registrationInView} selectionInView={selectionInView} sliderStoryInView={sliderStoryInView} />
+                        {/* <Navigation bannerInView={bannerInView} registrationInView={registrationInView} selectionInView={selectionInView} sliderStoryInView={sliderStoryInView} /> */}
                         <img
                             loading="lazy"
                             className="absolute w-full hidden md:block  object-cover -z-10"
@@ -106,11 +92,8 @@ function LandingPage() {
                                 </div>
                             </div>
                             <div className="18+ absolute top-[36px] right-[8px] md:top-[660px] md:left-[90px]">
-                                <img src="./src/assets/img/18+.png" />
+                                <img loading="lazy" src="./src/assets/img/18+.png" />
                             </div>
-                            {/* <div className='absolute bottom-10 w-full'>
-                            <DownlBoard />
-                        </div> */}
                         </section>
                         <section
                             ref={registrationRef}
@@ -212,9 +195,11 @@ function LandingPage() {
                     </div>
                 </div>
                 <div className='fixed w-full float top-0 z-50'>
-                   {/* <SocialBoardRelease/> */}
-                   <SocialBoardPreRelease/>
-                    
+                    {/* <SocialBoardRelease/> */}
+                    <SocialBoardPreRelease />
+                    <div className="scale-[.5] xl:scale-[.6] xxl:scale-[.8] xxxl:scale-100 origin-top-left">
+                        <Navigation bannerInView={bannerInView} registrationInView={registrationInView} selectionInView={selectionInView} sliderStoryInView={sliderStoryInView} />
+                    </div>
                 </div>
 
 

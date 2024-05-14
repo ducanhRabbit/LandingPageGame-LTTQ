@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 function Navigation({bannerInView, registrationInView,selectionInView,sliderStoryInView}) {
     return (
-        <div className='navigation absolute h-[calc(100%_-_620px)] pb-[505px] top-[320px] left-[90px] md:block hidden'>
-            <div className='sticky flex flex-col gap-[20px] top-[320px] z-50'>
+        <div className='navigation absolute top-[320px] left-[90px] md:block hidden'>
+            <div className='fixed flex flex-col gap-[20px] top-[320px] z-50'>
 
                 <div className='w-[318px]  left-[21px] absolute -z-10 border-dotted border-[#cacdcd] opacity-90 border-t-4 origin-left rotate-90 -top-[18px]'></div>
                 <a href='#Banner' className=' block cursor-pointer'>
@@ -46,4 +46,3 @@ function Navigation({bannerInView, registrationInView,selectionInView,sliderStor
 
 export default Navigation
 
-// className='navigation absolute h-[calc(100%_-_620px)] pb-[505px] top-[320px] left-[90px] md:block hidden'

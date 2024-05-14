@@ -60,7 +60,7 @@ export const mockData = {
             name: 'Ngộ Không',
             class: 'THỜI KHÔNG',
             description: '[Ngộ Không] còn được gọi là Tề Thiên Đại Thánh, sinh ra từ một hòn đá Tiên ở Hoa Quả Sơn. Sau đại náo Thiên Cung, bị Như Lai phong ấn dưới Ngũ Hành Sơn. Năm trăm năm sau, hộ tống Đường Tăng đi thỉnh kinh được phong làm Đấu Chiến Thắng Phật.',
-            classImg: './src/assets/img/Ngo.png',
+            classImg: './src/assets/img/ThoiKhong.png',
             selectImg: './src/assets/img/NgoKhong-select.png',
             offImg: './src/assets/img/NgoKhong-off.png',
             fullBodyImg: './src/assets/img/NgoKhong.png',
