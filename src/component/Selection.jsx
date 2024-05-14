@@ -18,10 +18,11 @@ function Selection() {
 
     useEffect(() => {
         swiperRef.current.addEventListener('swiperslidechangetransitionstart', (e) => {
-            console.log(e.detail[0])
             setCurrentActiveChar(characters[e.detail[0].realIndex]);
         });
+        
     }, [])
+
     return (
         <div className='w-full pb-28 relative char-info'>
             <div className='char-shadow absolute w-full md:w-auto -right-[100px] top-[160px] md:top-[48px] md:right-0 -z-10'>
@@ -59,7 +60,7 @@ function Selection() {
                                         <div key={char._id} onClick={() => {
                                             const findChar = getCharById(char._id)
                                             setCurrentActiveChar(findChar)
-                                            swiperRef.current.swiper.slideTo(index)
+                                            swiperRef.current.swiper.slideToLoop(index)
                                         }} className='w-full h-[430px] cursor-pointer'></div>
                                     )
                                 })}
@@ -86,9 +87,9 @@ function Selection() {
                 </div>
                 <div className='right flex-1 min-h-0 min-w-0  relative'>
                     <div className='pt-[24px]'>
-                        <swiper-container ref={swiperRef} class="mySwiper2 " no-swiping="true" centered-slides="true"
-                            no-swiping-class='mySwiper2'
+                        <swiper-container ref={swiperRef} class="mySwiper2 "  centered-slides="true"
                             slides-per-view="1"
+                            grab-cursor="true"
                             navigation-next-el='.char-info .next-btn'
                             navigation-prev-el='.char-info .prev-btn'
                             loop='true'
