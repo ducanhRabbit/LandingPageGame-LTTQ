@@ -1,26 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function Navigation({observerRefs, outterRef}) {
-    const [bannerRef,registrationRef,selectionRef,sliderStoryRef] = observerRefs
-    const [sectionIdOnScreen,setSectionIdOnScreen] = useState('Banner')
-    console.log(sectionIdOnScreen)
-
-    const handleSpyScroll = ()=>{
-        observerRefs.forEach((sec)=>{
-            let top = outterRef.current.scrollTop
-            let offSet = sec.current.offsetTop -150
-            let height = sec.current.offsetHeight
-            let id = sec.current.id
-            if(top >= offSet && top < offSet + height){
-                setSectionIdOnScreen(id)
-            }
-        })
-    }
-    useEffect(()=>{
-        console.log(outterRef?.current)
-        outterRef?.current?.addEventListener('scroll',handleSpyScroll)
-        return ()=> {outterRef?.current?.removeEventListener('scroll',handleSpyScroll)}
-    },[])
+function Navigation({bannerInView, registrationInView,selectionInView,sliderStoryInView}) {
     return (
         <div className='navigation absolute h-[calc(100%_-_620px)] pb-[505px] top-[320px] left-[90px] md:block hidden'>
             <div className='sticky flex flex-col gap-[20px] top-[320px] z-50'>
@@ -29,33 +9,33 @@ function Navigation({observerRefs, outterRef}) {
                 <a href='#Banner' className=' block cursor-pointer'>
                     <div className='flex items-center gap-4'>
                         <div className='w-[42px]'>
-                            {sectionIdOnScreen === 'Banner'?<img className='w-full h-full object-cover' src='./src/assets/img/navigate-active.png' />:<img className='w-full h-full object-cover' src='./src/assets/img/navigate-unactive.png' />}
+                            {bannerInView?<img className='w-full h-full object-cover' src='./src/assets/img/navigate-active.png' />:<img className='w-full h-full object-cover' src='./src/assets/img/navigate-unactive.png' />}
                         </div>
-                        <div className={`${sectionIdOnScreen === 'Banner'?'stroke-text-active':'stroke-text'} text-2xl font-semibold`}>Trang Chủ</div>
+                        <div className={`${bannerInView?'stroke-text-active':'stroke-text'} text-2xl font-semibold`}>Trang Chủ</div>
                     </div>
                 </a>
                 <a href='#Registration' className='cursor-pointer'>
                     <div className='flex items-center  gap-4'>
                         <div className='w-[42px]'>
-                        {sectionIdOnScreen === 'Registration'?<img className='w-full h-full object-cover' src='./src/assets/img/navigate-active.png' />:<img className='w-full h-full object-cover' src='./src/assets/img/navigate-unactive.png' />}
+                        {registrationInView?<img className='w-full h-full object-cover' src='./src/assets/img/navigate-active.png' />:<img className='w-full h-full object-cover' src='./src/assets/img/navigate-unactive.png' />}
                         </div>
-                        <span className={`${sectionIdOnScreen === 'Registration'?'stroke-text-active':'stroke-text'} text-2xl font-semibold`}>Đăng Ký Trước <br></br> Nhận Quà</span>
+                        <span className={`${registrationInView?'stroke-text-active':'stroke-text'} text-2xl font-semibold`}>Đăng Ký Trước <br></br> Nhận Quà</span>
                     </div>
                 </a>
                 <a href='#Selection' className='cursor-pointer'>
                     <div className='flex items-center gap-4'>
                         <div className='w-[42px]'>
-                        {sectionIdOnScreen === 'Selection'?<img className='w-full h-full object-cover' src='./src/assets/img/navigate-active.png' />:<img className='w-full h-full object-cover' src='./src/assets/img/navigate-unactive.png' />}
+                        {selectionInView?<img className='w-full h-full object-cover' src='./src/assets/img/navigate-active.png' />:<img className='w-full h-full object-cover' src='./src/assets/img/navigate-unactive.png' />}
                         </div>
-                        <span className={`${sectionIdOnScreen === 'Selection'?'stroke-text-active':'stroke-text'} text-2xl font-semibold`}>Lục Phái <br></br>Danh Tướng</span>
+                        <span className={`${selectionInView?'stroke-text-active':'stroke-text'} text-2xl font-semibold`}>Lục Phái <br></br>Danh Tướng</span>
                     </div>
                 </a>
                 <a href='#SliderStory' className='cursor-pointer'>
                     <div className='flex items-center gap-4'>
                         <div className='w-[42px]'>
-                        {sectionIdOnScreen === 'SliderStory'?<img className='w-full h-full object-cover' src='./src/assets/img/navigate-active.png' />:<img className='w-full h-full object-cover' src='./src/assets/img/navigate-unactive.png' />}
+                        {sliderStoryInView?<img className='w-full h-full object-cover' src='./src/assets/img/navigate-active.png' />:<img className='w-full h-full object-cover' src='./src/assets/img/navigate-unactive.png' />}
                         </div>
-                        <span className={`${sectionIdOnScreen === 'SliderStory'?'stroke-text-active':'stroke-text'} text-2xl font-semibold`}>Lục Phái <br></br>Đặc Sắc</span>
+                        <span className={`${sliderStoryInView?'stroke-text-active':'stroke-text'} text-2xl font-semibold`}>Lục Phái <br></br>Đặc Sắc</span>
                     </div>
                 </a>
             </div>
@@ -65,3 +45,5 @@ function Navigation({observerRefs, outterRef}) {
 }
 
 export default Navigation
+
+// className='navigation absolute h-[calc(100%_-_620px)] pb-[505px] top-[320px] left-[90px] md:block hidden'

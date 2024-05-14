@@ -60,14 +60,10 @@ body {
 }
 
 swiper-container {
-
+  width: 100%;
 }
 
 swiper-slide {
-  color: #fff;
-  font-size: 25px;
-  margin: auto;
-  width: 1145px;
   height: 100%;
 }
 
@@ -85,4 +81,5 @@ swiper-slide {
   background-image: url('./src/assets/img/active-dot-slider.png');
   transform: scale(1.6);
 }
+
 
