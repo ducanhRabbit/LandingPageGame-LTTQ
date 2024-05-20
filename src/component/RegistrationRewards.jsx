@@ -1,5 +1,4 @@
 import React from 'react'
-import useScreenSize from '../hook/useScreenSize'
 
 function RegistrationRewards() {
   return (

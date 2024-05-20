@@ -1,27 +1,17 @@
+
 import React, { useRef, useState } from "react";
-import RegistrationRewards from "./RegistrationRewards";
-import Selection from "./Selection";
+import RegistrationRewards from "../component/RegistrationRewards";
+import Selection from "../component/Selection";
 import useScreenSize from "../hook/useScreenSize";
-import SliderStory from "./SliderStory";
-import Navigation from "./Navigation";
+import SliderStory from "../component/SliderStory";
+import Navigation from "../component/Navigation";
+import DownlBoard from "../component/DownlBoard";
 import { FiMenu } from "react-icons/fi";
-import { useInView } from "react-intersection-observer";
-import SocialBoardPreRelease from "./SocialBoardPreRelease";
-function LandingPage() {
+import { TbCirclePlus } from "react-icons/tb";
+import SocialBoardPreRelease from "../component/SocialBoardPreRelease";
+function HomePage() {
     const { screenWidth, screenHeight, isMobile } = useScreenSize();
     const ratio = screenWidth / (isMobile ? 768 : 1920);
-    const { ref: bannerRef, inView: bannerInView } = useInView({
-        threshold: 0.4,
-    })
-    const { ref: registrationRef, inView: registrationInView } = useInView({
-        threshold: 0.4,
-    })
-    const { ref: selectionRef, inView: selectionInView } = useInView({
-        threshold: 0.4,
-    })
-    const { ref: sliderStoryRef, inView: sliderStoryInView } = useInView({
-        threshold: 0.4,
-    })
     return (
         <>
             <div
@@ -65,7 +55,6 @@ function LandingPage() {
                             src="./src/assets/img/bg-mobile.png"
                         />
                         <section
-                            ref={bannerRef}
                             id="Banner"
                             className="1 relative  h-[700px]  md:pt-[57px] md:h-[1142px]"
                         >
@@ -96,44 +85,121 @@ function LandingPage() {
                             </div>
                         </section>
                         <section
-                            ref={registrationRef}
                             id="Registration"
-                            className="2 relative h-[640px] md:h-[1065px] pt-[24px] md:pt-[36px]"
+                            className="2 relative "
                         >
-                            <img
-                                loading="lazy"
-                                className="absolute scale-110 top-2 md:scale-100 md:-top-10 object-cover"
-                                src="./src/assets/img/la cay.png"
-                            />
-                            <div className="title w-[550px] md:w-auto mx-auto md:pl-[80px]">
-                                <img
-                                    loading="lazy"
-                                    className="object-cover mx-auto "
-                                    src="./src/assets/img/title-section2.png"
-                                />
-                            </div>
-                            <div className="sub-title relative mt-[16px]">
-                                <div className="text w-[374px] relative mx-auto md:w-auto">
-                                    <img className="mx-auto" src="./src/assets/img/sub-title-regis.png" />
+                            <div className="flex justify-center items-center gap-[24px]">
+                                <div className="playNow_btn cursor-pointer">
+                                    <img className="-mt-[24px]" src="./src/assets/img/playNow-btn.png"></img>
                                 </div>
-                                <div className="absolute w-[117px] md:w-[171px] top-[10px] left-[calc(50%_-_130px)] md:left-[calc(50%_-_194px)]">
-                                    <img className="w-full object-cover" src="./src/assets/img/5.000.png" />
+
+                                <DownlBoard></DownlBoard>
+                            </div>
+                            <div className="notice-board mt-[60px]">
+                                <div className="w-[1280px] h-[435px] relative  bg-white mx-auto shadow-[4px_4px_8px_2px_rgb(0_0_0_/.3)]">
+                                    <div className="top-line absolute z-0  top-0 right-0 w-full ">
+                                        <img src="./src/assets/img/top-decor.png" className="w-full object-cover"></img>
+                                    </div>
+                                    <div className="flex relative h-full">
+                                        <div className="w-[60%]">
+                                            <swiper-container class="mySwiper3 scale-y-110 h-full pl-8"
+                                                slides-per-view="1"
+                                                grab-cursor="true"
+                                                loop='true'
+                                                // effect='fade'
+                                                // fade-effect-cross-fade={true}
+                                                >
+
+                                                <swiper-slide class=''>
+                                                    <img loading='lazy' className={` w-full  h-full  object-cover`} src="./src/assets/img/new-slide.png" />
+                                                </swiper-slide>
+                                                <swiper-slide class=''>
+                                                    <img loading='lazy' className={` w-full  h-full  object-cover`} src="./src/assets/img/slider-1.png" />
+                                                </swiper-slide>
+
+                                            </swiper-container>
+                                            {/* <img className=" pl-8 w-full h-full object-cover scale-y-110" src="./src/assets/img/new-slide.png"></img> */}
+
+                                        </div>
+                                        <div className="flex-1">
+                                            <div className="notice-content pt-6 px-6 pr-8 flex flex-col h-full justify-between">
+                                                <div className="tabs-control flex justify-between items-center">
+                                                    <div className="flex gap-4">
+                                                        <button className="text-2xl p-2">
+                                                            Tin tức
+                                                        </button>
+                                                        <button className="text-2xl p-2">
+                                                            Sự kiện
+                                                        </button>
+                                                        <button className="text-2xl p-2">
+                                                            Hướng Dẫn
+                                                        </button>
+                                                    </div>
+                                                    <div className="p-2 cursor-pointer">
+                                                        <TbCirclePlus size={24} />
+                                                    </div>
+                                                </div>
+                                                <div className="tab-content text-[18px] flex-1 py-[20px] justify-between text-black flex flex-col ">
+                                                    <ul>
+                                                        <li className="py-3">
+                                                            <a href="">
+                                                                <p>Cảnh báo Lừa Đảo và Khóa Tài Khoản Nạp Lậu</p>
+                                                            </a>
+                                                            <div className="text-sm">
+                                                                26/04/2024 - 16:08:34
+                                                            </div>
+                                                        </li>
+                                                        <li className="py-3 [border-image:_linear-gradient(270deg,transparent_1%,#620b0c_50%,transparent)_100%_0_100%_0_/_1px_0_1px_0_stretch]">
+                                                            <a href="">
+                                                                <p>[Thông báo] Thời gian bảo trì và nội dung Update và có
+                                                                    gói quà cho các chu vị huỳnh đài trong ngày trọng ....</p>
+                                                            </a>
+                                                            <div className="text-sm">
+                                                                26/04/2024 - 16:08:34
+                                                            </div>
+                                                        </li>
+                                                        <li className="py-3 ">
+                                                            <a href="">
+                                                                <p>[Thông báo] Thời gian bảo trì và nội dung Update và có
+                                                                    gói quà cho các chu vị huỳnh đài trong ngày trọng ....</p>
+                                                            </a>
+                                                            <div className="text-sm">
+                                                                26/04/2024 - 16:08:34
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <div className="text-right">
+                                                        <button className="text-black p-2">
+                                                            Xem thêm
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-                            <RegistrationRewards />
-                            <div className="absolute cursor-pointer bottom-[20px] md:bottom-[28px] left-1/2 -translate-x-1/2">
-                                <img
-                                    loading="lazy"
-                                    className="mx-auto md:pl-[80px]"
-                                    src="./src/assets/img/Register-now-btn.png"
-                                />
+                            <div className="flex justify-center gap-4 mt-[48px]">
+                                <button>
+                                    <img src="./src/assets/img/Charge-btn.png"/>
+                                </button>
+                                <button>
+                                    <img src="./src/assets/img/newbie-btn.png"/>
+                                </button>
+                                <button>
+                                    <img src="./src/assets/img/fanpage-btn.png"/>
+                                </button>
+                                <button>
+                                    <img src="./src/assets/img/CSKH.png"/>
+                                </button>
                             </div>
                         </section>
-                        <section ref={selectionRef} id="Selection" className="3  ">
+                        <section id="Selection" className="3  ">
                             <Selection />
                         </section>
                         <section
-                            ref={sliderStoryRef}
+
                             id="SliderStory"
                             className="4 relative border-none"
                         >
@@ -141,7 +207,7 @@ function LandingPage() {
                                 <img
                                     loading="lazy"
                                     className="w-full object-cover hidden md:block"
-                                    src="./src/assets/img/bg-section4.png"
+                                    src="./src/assets/img/slider-story-home-bg.png"
                                 />
                                 <img
                                     loading="lazy"
@@ -160,6 +226,15 @@ function LandingPage() {
                                 <div className="w-[726px] h-[364px] py-[20px] md:w-[1430px] md:h-[710px] md:py-[34px] relative ">
                                     <SliderStory />
                                 </div>
+                            </div>
+                        </section>
+                        <section className="rank relative bg-white">
+                            <div className="absolute">
+
+                            <img className="object-cover z-0" src="./src/assets/img/test-bg.png"/>
+                            </div>
+                            <div className="relative">
+                                <img src="./src/assets/img/rank-title.png"></img>
                             </div>
                         </section>
 
@@ -196,10 +271,10 @@ function LandingPage() {
                 </div>
                 <div className='fixed w-full float top-0 z-50'>
                     {/* <SocialBoardRelease/> */}
-                    <SocialBoardPreRelease />
+                    {/* <SocialBoardPreRelease />
                     <div className="scale-[.5] xl:scale-[.6] xxl:scale-[.8] xxxl:scale-100 origin-top-left">
-                        <Navigation bannerInView={bannerInView} registrationInView={registrationInView} selectionInView={selectionInView} sliderStoryInView={sliderStoryInView} />
-                    </div>
+                        <Navigation  />
+                    </div> */}
                 </div>
 
 
@@ -208,4 +283,4 @@ function LandingPage() {
     );
 }
 
-export default LandingPage;
+export default HomePage

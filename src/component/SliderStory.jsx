@@ -14,7 +14,7 @@ function SliderStory() {
                 css-mode='false'
                 initial-slide='2'
                 autoplay='true'
-                autoplay-deplay = '5000'
+                autoplay-deplay='5000'
                 pagination='true'
                 pagination-el='.pagination'
                 pagination-bullet-class='myBullet'
@@ -22,20 +22,20 @@ function SliderStory() {
                 pagination-clickable='true'
             >
                 <swiper-slide class='w-[585px] md:w-auto'>
-                        <img className='w-full' src='./src/assets/img/slider-1.png' />
+                    <img className='w-full' src='./src/assets/img/slider-1.png' />
 
                 </swiper-slide>
                 <swiper-slide class='w-[585px] md:w-auto'>
-                        <img className='w-full' src='./src/assets/img/slider-2.png' />
+                    <img className='w-full' src='./src/assets/img/slider-2.png' />
                 </swiper-slide>
                 <swiper-slide class='w-[585px] md:w-auto'>
-                        <img className='w-full' src='./src/assets/img/slider-3.png' />
+                    <img className='w-full' src='./src/assets/img/slider-3.png' />
                 </swiper-slide>
                 <swiper-slide class='w-[585px] md:w-auto'>
-                        <img className='w-full' src='./src/assets/img/slider-4.png' />
+                    <img className='w-full' src='./src/assets/img/slider-4.png' />
                 </swiper-slide>
                 <swiper-slide class='w-[585px] md:w-auto'>
-                        <img className='w-full' src='./src/assets/img/slider-5.png' />
+                    <img className='w-full' src='./src/assets/img/slider-5.png' />
                 </swiper-slide>
             </swiper-container>
             <div className='control'>
