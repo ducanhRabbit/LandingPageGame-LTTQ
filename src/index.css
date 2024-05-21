@@ -4,6 +4,11 @@
   outline: none;
 }
 
+@font-face {
+  font-family: "League Gothic",sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+}
+
 :root {
   font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -44,6 +49,8 @@ body {
     mask-size: 300% 200%;
     mask-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, #fff 50%, rgba(255, 255, 255, 0) 60%);
   }
+
+  
 }
 
 .main-text {

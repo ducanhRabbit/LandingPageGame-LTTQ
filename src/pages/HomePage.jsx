@@ -88,6 +88,7 @@ function HomePage() {
                             id="Registration"
                             className="2 relative "
                         >
+                            <div className="wrapper px-3">
                             <div className="flex justify-center items-center gap-[24px]">
                                 <div className="playNow_btn cursor-pointer">
                                     <img className="-mt-[24px]" src="./src/assets/img/playNow-btn.png"></img>
@@ -96,42 +97,39 @@ function HomePage() {
                                 <DownlBoard></DownlBoard>
                             </div>
                             <div className="notice-board mt-[60px]">
-                                <div className="w-[1280px] h-[435px] relative  bg-white mx-auto shadow-[4px_4px_8px_2px_rgb(0_0_0_/.3)]">
-                                    <div className="top-line absolute z-0  top-0 right-0 w-full ">
-                                        <img src="./src/assets/img/top-decor.png" className="w-full object-cover"></img>
+                                <div className="md:w-[1280px] md:h-[435px] relative  bg-white mx-auto shadow-[4px_4px_8px_2px_rgb(0_0_0_/.3)]">
+                                    <div className="top-line absolute z-0 top-[450px]  md:top-0 md:right-0 w-full h-[80px]">
+                                        <img src="./src/assets/img/top-decor.png" className="w-full h-full object-cover"></img>
                                     </div>
-                                    <div className="flex relative h-full">
-                                        <div className="w-[60%]">
-                                            <swiper-container class="mySwiper3 scale-y-110 h-full pl-8"
+                                    <div className="flex md:flex-row  flex-col relative h-full">
+                                        <div className="md:w-[60%]">
+                                            <swiper-container class="mySwiper3 md:scale-y-110 md:h-full md:pl-8"
                                                 slides-per-view="1"
                                                 grab-cursor="true"
                                                 loop='true'
-                                                // effect='fade'
-                                                // fade-effect-cross-fade={true}
-                                                >
+                                            >
 
                                                 <swiper-slide class=''>
                                                     <img loading='lazy' className={` w-full  h-full  object-cover`} src="./src/assets/img/new-slide.png" />
                                                 </swiper-slide>
-                                                <swiper-slide class=''>
+                                                <swiper-slide class='h-full'>
                                                     <img loading='lazy' className={` w-full  h-full  object-cover`} src="./src/assets/img/slider-1.png" />
                                                 </swiper-slide>
 
                                             </swiper-container>
-                                            {/* <img className=" pl-8 w-full h-full object-cover scale-y-110" src="./src/assets/img/new-slide.png"></img> */}
 
                                         </div>
                                         <div className="flex-1">
                                             <div className="notice-content pt-6 px-6 pr-8 flex flex-col h-full justify-between">
                                                 <div className="tabs-control flex justify-between items-center">
                                                     <div className="flex gap-4">
-                                                        <button className="text-2xl p-2">
+                                                        <button className="text-3xl p-3 md:text-2xl md:p-2">
                                                             Tin tức
                                                         </button>
-                                                        <button className="text-2xl p-2">
+                                                        <button className="text-3xl p-3 md:text-2xl md:p-2">
                                                             Sự kiện
                                                         </button>
-                                                        <button className="text-2xl p-2">
+                                                        <button className="text-3xl p-3 md:text-2xl md:p-2">
                                                             Hướng Dẫn
                                                         </button>
                                                     </div>
@@ -141,8 +139,8 @@ function HomePage() {
                                                 </div>
                                                 <div className="tab-content text-[18px] flex-1 py-[20px] justify-between text-black flex flex-col ">
                                                     <ul>
-                                                        <li className="py-3">
-                                                            <a href="">
+                                                        <li className="py-3 ">
+                                                            <a className="hover:text-[#033e65] text-[26px]" href="">
                                                                 <p>Cảnh báo Lừa Đảo và Khóa Tài Khoản Nạp Lậu</p>
                                                             </a>
                                                             <div className="text-sm">
@@ -150,7 +148,7 @@ function HomePage() {
                                                             </div>
                                                         </li>
                                                         <li className="py-3 [border-image:_linear-gradient(270deg,transparent_1%,#620b0c_50%,transparent)_100%_0_100%_0_/_1px_0_1px_0_stretch]">
-                                                            <a href="">
+                                                            <a className="hover:text-[#033e65] text-[26px]" href="">
                                                                 <p>[Thông báo] Thời gian bảo trì và nội dung Update và có
                                                                     gói quà cho các chu vị huỳnh đài trong ngày trọng ....</p>
                                                             </a>
@@ -159,7 +157,7 @@ function HomePage() {
                                                             </div>
                                                         </li>
                                                         <li className="py-3 ">
-                                                            <a href="">
+                                                            <a className="hover:text-[#033e65] text-[26px]" href="">
                                                                 <p>[Thông báo] Thời gian bảo trì và nội dung Update và có
                                                                     gói quà cho các chu vị huỳnh đài trong ngày trọng ....</p>
                                                             </a>
@@ -169,7 +167,7 @@ function HomePage() {
                                                         </li>
                                                     </ul>
                                                     <div className="text-right">
-                                                        <button className="text-black p-2">
+                                                        <button  className="text-black p-2 text-[26px] hover:text-[#033e65]">
                                                             Xem thêm
                                                         </button>
                                                     </div>
@@ -182,17 +180,19 @@ function HomePage() {
                             </div>
                             <div className="flex justify-center gap-4 mt-[48px]">
                                 <button>
-                                    <img src="./src/assets/img/Charge-btn.png"/>
+                                    <img src="./src/assets/img/Charge-btn.png" />
                                 </button>
                                 <button>
-                                    <img src="./src/assets/img/newbie-btn.png"/>
+                                    <img src="./src/assets/img/newbie-btn.png" />
                                 </button>
                                 <button>
-                                    <img src="./src/assets/img/fanpage-btn.png"/>
+                                    <img src="./src/assets/img/fanpage-btn.png" />
                                 </button>
                                 <button>
-                                    <img src="./src/assets/img/CSKH.png"/>
+                                    <img src="./src/assets/img/CSKH.png" />
                                 </button>
+                            </div>
+
                             </div>
                         </section>
                         <section id="Selection" className="3  ">
@@ -212,7 +212,7 @@ function HomePage() {
                                 <img
                                     loading="lazy"
                                     className="w-full object-cover md:hidden"
-                                    src="./src/assets/img/bg-section4-mobile.png"
+                                    src="./src/assets/img/home-slider-story-mb.png"
                                 />
                             </div>
                             <div className="title absolute top-0 left-1/2 -translate-x-1/2">
@@ -228,16 +228,262 @@ function HomePage() {
                                 </div>
                             </div>
                         </section>
-                        <section className="rank relative bg-white">
-                            <div className="absolute">
-
-                            <img className="object-cover z-0" src="./src/assets/img/test-bg.png"/>
+                        <section className="rank relative min-h-[1200px]">
+                            <div className="absolute -top-[100px] md:-top-[200px] -z-10 bg-white">
+                                <img className="object-cover z-0" src="./src/assets/img/test-bg.png" />
                             </div>
-                            <div className="relative">
-                                <img src="./src/assets/img/rank-title.png"></img>
+                            <div className="absolute md:-top-[60px] left-1/2 -translate-x-1/2">
+                                <img className="mx-auto " src="./src/assets/img/rank-title.png"></img>
+                            </div>
+                            <div className="wrapper  mx-auto">
+                                <div className="rank-table relative pt-[80px] pb-[290px] flex flex-col">
+                                    <img className="absolute -z-10" src="./src/assets/img/rank-board.png"></img>
+                                    <div className="rank-categories pt-[140px]">
+                                        <div className="flex justify-center font-gothic">
+                                            <div className="relative cursor-pointer">
+                                                <img src="./src/assets/img/rank-tab(active).png"></img>
+                                                <span className="text-[40px] text-[#693e03] absolute top-[38px] left-[125px]">BXH Server</span>
+                                            </div>
+                                            <div className="relative cursor-pointer">
+                                                <img src="./src/assets/img/rank-tab(unactive).png"></img>
+                                                <span className="text-[40px] text-[#383838] absolute top-[38px] left-[125px]">BXH Bang Hội</span>
+                                            </div>
+                                            <div className="relative cursor-pointer">
+                                                <img src="./src/assets/img/rank-tab(unactive).png"></img>
+                                                <span className="text-[40px] text-[#383838] absolute top-[38px] left-[125px]">BXH TOP Cụm</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="w-[1000px] mx-auto h-[700px] overflow-auto mt-[50px]">
+                                        <table className="w-full">
+                                            <thead className="absolute top-[360px] w-[1000px]">
+                                                <tr className="w-full text-[30px] flex">
+                                                    <th className="w-[80px]" >Hạng</th>
+                                                    <th className="w-[360px]">Tên nhân vật</th>
+                                                    <th className="w-[260px]">Server</th>
+                                                    <th className="flex-1">Lực chiến</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="text-[30px] text-center">
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px] pl-2" width={80}>
+                                                        <img  src="./src/assets/img/first-rank.png"></img>
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Chiến Thần 310
+                                                    </td>
+                                                    <td className="break-all">
+                                                    1,201,546,211,23454
+                                                    </td>
+                                                </tr>
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px] pl-2" width={80}>
+                                                        <img  src="./src/assets/img/second-rank.png"></img>
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                    1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px] pl-2" width={80}>
+                                                        <img  src="./src/assets/img/third-rank.png"></img>
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                    1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px]" width={80}>
+                                                        4
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                    1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px]" width={80}>
+                                                        4
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                    1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px]" width={80}>
+                                                        4
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                    1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px]" width={80}>
+                                                        4
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                    1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px]" width={80}>
+                                                        4
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                    1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px]" width={80}>
+                                                        4
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                    1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px]" width={80}>
+                                                        4
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                    1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px]" width={80}>
+                                                        4
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                    1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px]" width={80}>
+                                                        4
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                    1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px]" width={80}>
+                                                        4
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                    1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                <tr className="border-b-2 border-[#54493b]">
+
+                                                    <td className="h-[60px]" width={80}>
+                                                        4
+                                                    </td>
+                                                    <td className="" width={360}>
+                                                        xxxxxx
+                                                    </td>
+                                                    <td width={260}>
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                    1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
                             </div>
                         </section>
-
                         <section className="footer">
                             <div className="navigation-footer md:flex justify-center bg-[#8a1919] hidden">
                                 <div className="px-8 py-4 cursor-pointer">Trang chủ</div>
