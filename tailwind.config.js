@@ -14,6 +14,10 @@ export default {
       'sm': '639px',
       'xs': '477px'
     },
+    fontFamily: {
+      gothic: ["League Gothic"],
+
+    },
     extend: {
       keyframes:{
         wave:{

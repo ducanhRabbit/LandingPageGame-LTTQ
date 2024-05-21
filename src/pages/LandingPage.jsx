@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
-import RegistrationRewards from "./RegistrationRewards";
-import Selection from "./Selection";
+import RegistrationRewards from "../component/RegistrationRewards";
+import Selection from "../component/Selection";
 import useScreenSize from "../hook/useScreenSize";
-import SliderStory from "./SliderStory";
-import Navigation from "./Navigation";
+import SliderStory from "../component/SliderStory";
+import Navigation from "../component/Navigation";
 import { FiMenu } from "react-icons/fi";
 import { useInView } from "react-intersection-observer";
-import SocialBoardPreRelease from "./SocialBoardPreRelease";
+import SocialBoardPreRelease from "../component/SocialBoardPreRelease";
 function LandingPage() {
     const { screenWidth, screenHeight, isMobile } = useScreenSize();
     const ratio = screenWidth / (isMobile ? 768 : 1920);
