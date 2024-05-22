@@ -9,9 +9,15 @@ import DownlBoard from "../component/DownlBoard";
 import { FiMenu } from "react-icons/fi";
 import { TbCirclePlus } from "react-icons/tb";
 import SocialBoardPreRelease from "../component/SocialBoardPreRelease";
+import SocialBoardRelease from "../component/SocialBoardRelease";
 function HomePage() {
     const { screenWidth, screenHeight, isMobile } = useScreenSize();
     const ratio = screenWidth / (isMobile ? 768 : 1920);
+
+    const [activeTab,setActiveTab] = useState('news')
+
+    const rankData = [...Array(97)]
+
     return (
         <>
             <div
@@ -52,7 +58,7 @@ function HomePage() {
                         <img
                             loading="lazy"
                             className="absolute w-full block md:hidden  object-cover -z-10"
-                            src="./src/assets/img/bg-mobile.png"
+                            src="./src/assets/img/bg-mobile-home.png"
                         />
                         <section
                             id="Banner"
@@ -88,22 +94,18 @@ function HomePage() {
                             id="Registration"
                             className="2 relative "
                         >
-                            <div className="wrapper px-3">
-                            <div className="flex justify-center items-center gap-[24px]">
-                                <div className="playNow_btn cursor-pointer">
-                                    <img className="-mt-[24px]" src="./src/assets/img/playNow-btn.png"></img>
-                                </div>
-
-                                <DownlBoard></DownlBoard>
-                            </div>
-                            <div className="notice-board mt-[60px]">
-                                <div className="md:w-[1280px] md:h-[435px] relative  bg-white mx-auto shadow-[4px_4px_8px_2px_rgb(0_0_0_/.3)]">
-                                    <div className="top-line absolute z-0 top-[450px]  md:top-0 md:right-0 w-full h-[80px]">
-                                        <img src="./src/assets/img/top-decor.png" className="w-full h-full object-cover"></img>
+                            <div className="wrapper px-5">
+                                <div className="flex justify-center items-center gap-[24px]">
+                                    <div className="playNow_btn cursor-pointer">
+                                        <img className="-mt-[24px]" src="./src/assets/img/playNow-btn.png"></img>
                                     </div>
-                                    <div className="flex md:flex-row  flex-col relative h-full">
-                                        <div className="md:w-[60%]">
-                                            <swiper-container class="mySwiper3 md:scale-y-110 md:h-full md:pl-8"
+
+                                    <DownlBoard></DownlBoard>
+                                </div>
+                                <div className="notice-board mt-[60px] flex flex-col gap-8">
+                                    {
+                                        isMobile && <div className="">
+                                            <swiper-container class="mySwiper3"
                                                 slides-per-view="1"
                                                 grab-cursor="true"
                                                 loop='true'
@@ -112,90 +114,119 @@ function HomePage() {
                                                 <swiper-slide class=''>
                                                     <img loading='lazy' className={` w-full  h-full  object-cover`} src="./src/assets/img/new-slide.png" />
                                                 </swiper-slide>
-                                                <swiper-slide class='h-full'>
-                                                    <img loading='lazy' className={` w-full  h-full  object-cover`} src="./src/assets/img/slider-1.png" />
+                                                <swiper-slide class=''>
+                                                    <img loading='lazy' className={`block w-full  h-full  object-cover`} src="./src/assets/img/slider-1.png" />
                                                 </swiper-slide>
 
                                             </swiper-container>
 
                                         </div>
-                                        <div className="flex-1">
-                                            <div className="notice-content pt-6 px-6 pr-8 flex flex-col h-full justify-between">
-                                                <div className="tabs-control flex justify-between items-center">
-                                                    <div className="flex gap-4">
-                                                        <button className="text-3xl p-3 md:text-2xl md:p-2">
-                                                            Tin tức
-                                                        </button>
-                                                        <button className="text-3xl p-3 md:text-2xl md:p-2">
-                                                            Sự kiện
-                                                        </button>
-                                                        <button className="text-3xl p-3 md:text-2xl md:p-2">
-                                                            Hướng Dẫn
-                                                        </button>
+                                    }
+                                    <div className="md:w-[1280px] md:h-[435px] relative  bg-white mx-auto shadow-[4px_4px_8px_2px_rgb(0_0_0_/.3)]">
+                                        <div className="top-line absolute z-0 top-[0px]  md:top-0 md:right-0 w-full h-[80px]">
+                                            <img src="./src/assets/img/top-decor.png" className="w-full h-full object-cover"></img>
+                                        </div>
+                                        <div className="md:flex relative h-full">
+                                            {!isMobile && <div className="md:w-[60%]">
+                                                <swiper-container class="mySwiper3 md:scale-y-110 md:h-full md:pl-8"
+                                                    slides-per-view="1"
+                                                    grab-cursor="true"
+                                                    loop='true'
+                                                >
+
+                                                    <swiper-slide class=''>
+                                                        <img loading='lazy' className={` w-full  h-full  object-cover`} src="./src/assets/img/new-slide.png" />
+                                                    </swiper-slide>
+                                                    <swiper-slide class='h-full'>
+                                                        <img loading='lazy' className={` w-full  h-full  object-cover`} src="./src/assets/img/slider-1.png" />
+                                                    </swiper-slide>
+
+                                                </swiper-container>
+
+                                            </div>}
+                                            <div className="flex-1">
+                                                <div className="notice-content pt-[26px] md:pt-[35px] px-6 pr-8 flex flex-col h-full justify-between">
+                                                    <div className="tabs-control flex justify-between items-center">
+                                                        <div className="flex gap-4">
+                                                            <button onClick={()=>{
+                                                                setActiveTab('news')
+                                                            }} className={`${activeTab === 'news'?'bg-white text-[#1e3748]':''} text-3xl p-3 md:text-2xl md:p-2`}>
+                                                                Tin tức
+                                                            </button>
+                                                            <button onClick={()=>{
+                                                                setActiveTab('events')
+                                                            }} className={`${activeTab === 'events'?'bg-white text-[#1e3748]':''} text-3xl p-3 md:text-2xl md:p-2`}>
+                                                                Sự kiện
+                                                            </button>
+                                                            <button onClick={()=>{
+                                                                setActiveTab('tutorial')
+                                                            }} className={`${activeTab === 'tutorial'?'bg-white text-[#1e3748]':''} text-3xl p-3 md:text-2xl md:p-2`}>
+                                                                Hướng Dẫn
+                                                            </button>
+                                                        </div>
+                                                        <div className="p-2 cursor-pointer">
+                                                            <TbCirclePlus size={24} />
+                                                        </div>
                                                     </div>
-                                                    <div className="p-2 cursor-pointer">
-                                                        <TbCirclePlus size={24} />
-                                                    </div>
-                                                </div>
-                                                <div className="tab-content text-[18px] flex-1 py-[20px] justify-between text-black flex flex-col ">
-                                                    <ul>
-                                                        <li className="py-3 ">
-                                                            <a className="hover:text-[#033e65] text-[26px]" href="">
-                                                                <p>Cảnh báo Lừa Đảo và Khóa Tài Khoản Nạp Lậu</p>
-                                                            </a>
-                                                            <div className="text-sm">
-                                                                26/04/2024 - 16:08:34
-                                                            </div>
-                                                        </li>
-                                                        <li className="py-3 [border-image:_linear-gradient(270deg,transparent_1%,#620b0c_50%,transparent)_100%_0_100%_0_/_1px_0_1px_0_stretch]">
-                                                            <a className="hover:text-[#033e65] text-[26px]" href="">
-                                                                <p>[Thông báo] Thời gian bảo trì và nội dung Update và có
-                                                                    gói quà cho các chu vị huỳnh đài trong ngày trọng ....</p>
-                                                            </a>
-                                                            <div className="text-sm">
-                                                                26/04/2024 - 16:08:34
-                                                            </div>
-                                                        </li>
-                                                        <li className="py-3 ">
-                                                            <a className="hover:text-[#033e65] text-[26px]" href="">
-                                                                <p>[Thông báo] Thời gian bảo trì và nội dung Update và có
-                                                                    gói quà cho các chu vị huỳnh đài trong ngày trọng ....</p>
-                                                            </a>
-                                                            <div className="text-sm">
-                                                                26/04/2024 - 16:08:34
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                    <div className="text-right">
-                                                        <button  className="text-black p-2 text-[26px] hover:text-[#033e65]">
-                                                            Xem thêm
-                                                        </button>
+                                                    <div className="tab-content text-[26px] md:text-[18px] flex-1 py-[20px] justify-between text-black flex flex-col ">
+                                                        <ul>
+                                                            <li className="py-3 ">
+                                                                <a className="hover:text-[#033e65]" href="">
+                                                                    <p>Cảnh báo Lừa Đảo và Khóa Tài Khoản Nạp Lậu</p>
+                                                                </a>
+                                                                <div className="text-sm">
+                                                                    26/04/2024 - 16:08:34
+                                                                </div>
+                                                            </li>
+                                                            <li className="py-3 [border-image:_linear-gradient(270deg,transparent_1%,#620b0c_50%,transparent)_100%_0_100%_0_/_1px_0_1px_0_stretch]">
+                                                                <a className="hover:text-[#033e65] line-clamp-2" href="">
+                                                                    <p>[Thông báo] Thời gian bảo trì và nội dung Update và có
+                                                                        gói quà cho các chu vị huỳnh đài trong ngày trọng ....</p>
+                                                                </a>
+                                                                <div className="text-sm">
+                                                                    26/04/2024 - 16:08:34
+                                                                </div>
+                                                            </li>
+                                                            <li className="py-3 ">
+                                                                <a className="hover:text-[#033e65] line-clamp-2" href="">
+                                                                    <p>[Thông báo] Thời gian bảo trì và nội dung Update và có
+                                                                        gói quà cho các chu vị huỳnh đài trong ngày trọng ....</p>
+                                                                </a>
+                                                                <div className="text-sm">
+                                                                    26/04/2024 - 16:08:34
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <div className="text-right">
+                                                            <button className="text-black p-2 hover:text-[#033e65]">
+                                                                Xem thêm
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="flex justify-center gap-4 mt-[48px]">
-                                <button>
-                                    <img src="./src/assets/img/Charge-btn.png" />
-                                </button>
-                                <button>
-                                    <img src="./src/assets/img/newbie-btn.png" />
-                                </button>
-                                <button>
-                                    <img src="./src/assets/img/fanpage-btn.png" />
-                                </button>
-                                <button>
-                                    <img src="./src/assets/img/CSKH.png" />
-                                </button>
-                            </div>
+                                <div className="flex flex-wrap justify-center gap-8 gap-x-12 mt-[48px]">
+                                    <button className="hover:brightness-110">
+                                        <img src="./src/assets/img/Charge-btn.png" />
+                                    </button>
+                                    <button className="hover:brightness-110">
+                                        <img src="./src/assets/img/newbie-btn.png" />
+                                    </button>
+                                    <button className="hover:brightness-110">
+                                        <img src="./src/assets/img/fanpage-btn.png" />
+                                    </button>
+                                    <button className="hover:brightness-110">
+                                        <img src="./src/assets/img/CSKH.png" />
+                                    </button>
+                                </div>
 
                             </div>
                         </section>
-                        <section id="Selection" className="3  ">
+                        <section id="Selection" className="3 mt-[20px] md:mt-0">
                             <Selection />
                         </section>
                         <section
@@ -228,255 +259,110 @@ function HomePage() {
                                 </div>
                             </div>
                         </section>
-                        <section className="rank relative min-h-[1200px]">
+                        <section className="rank relative md:min-h-[1200px]">
                             <div className="absolute -top-[100px] md:-top-[200px] -z-10 bg-white">
                                 <img className="object-cover z-0" src="./src/assets/img/test-bg.png" />
                             </div>
-                            <div className="absolute md:-top-[60px] left-1/2 -translate-x-1/2">
+                            <div className="absolute -top-[20px] md:-top-[60px] left-1/2 -translate-x-1/2">
                                 <img className="mx-auto " src="./src/assets/img/rank-title.png"></img>
                             </div>
-                            <div className="wrapper  mx-auto">
-                                <div className="rank-table relative pt-[80px] pb-[290px] flex flex-col">
-                                    <img className="absolute -z-10" src="./src/assets/img/rank-board.png"></img>
-                                    <div className="rank-categories pt-[140px]">
+                            <div className="wrapper relative pt-[64px] md:pt-[80px] pb-[62px] md:pb-[290px]">
+                                <img className="absolute object-cover top-[68px] -z-10 -translate-x-1/2 left-1/2" src="./src/assets/img/rank-board.png"></img>
+                                <div className="rank-table pt-[81px] md:pt-[136px] relative flex flex-col w-[480px] md:w-[1000px] mx-auto">
+                                    <div className="rank-categories">
                                         <div className="flex justify-center font-gothic">
                                             <div className="relative cursor-pointer">
                                                 <img src="./src/assets/img/rank-tab(active).png"></img>
-                                                <span className="text-[40px] text-[#693e03] absolute top-[38px] left-[125px]">BXH Server</span>
+                                                <span className="text-[18px] md:text-[40px] text-[#693e03] absolute top-[9px] left-[46px] md:top-[18px] md:left-[102px]">BXH Server</span>
                                             </div>
                                             <div className="relative cursor-pointer">
                                                 <img src="./src/assets/img/rank-tab(unactive).png"></img>
-                                                <span className="text-[40px] text-[#383838] absolute top-[38px] left-[125px]">BXH Bang Hội</span>
+                                                <span className="text-[18px] md:text-[40px] text-[#383838] absolute top-[9px] left-[46px] md:top-[18px] md:left-[102px]">BXH Bang Hội</span>
                                             </div>
                                             <div className="relative cursor-pointer">
                                                 <img src="./src/assets/img/rank-tab(unactive).png"></img>
-                                                <span className="text-[40px] text-[#383838] absolute top-[38px] left-[125px]">BXH TOP Cụm</span>
+                                                <span className="text-[18px] md:text-[40px] text-[#383838] absolute top-[9px] left-[46px] md:top-[18px] md:left-[102px]">BXH TOP Cụm</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="w-[1000px] mx-auto h-[700px] overflow-auto mt-[50px]">
-                                        <table className="w-full">
-                                            <thead className="absolute top-[360px] w-[1000px]">
-                                                <tr className="w-full text-[30px] flex">
-                                                    <th className="w-[80px]" >Hạng</th>
-                                                    <th className="w-[360px]">Tên nhân vật</th>
-                                                    <th className="w-[260px]">Server</th>
+                                    <div className=" mt-[40px] w-full h-[250px] md:h-[700px] overflow-auto md:mt-[68px] rankScrollBar">
+                                        <table className="w-full  font-gothic md:text-[34px]">
+                                            <thead className="absolute w-full top-[132px] md:top-[240px]">
+                                                <tr className="  flex">
+                                                    <th className="w-[10%]" >Hạng</th>
+                                                    <th className="w-[40%]">Tên nhân vật</th>
+                                                    <th className="w-[25%]">Server</th>
                                                     <th className="flex-1">Lực chiến</th>
                                                 </tr>
                                             </thead>
-                                            <tbody className="text-[30px] text-center">
-                                                <tr className="border-b-2 border-[#54493b]">
+                                            <tbody className=" text-center">
+                                                <tr className="border-b-2  border-[#54493b] [&>td]:h-[37px] md:[&>td]:h-[60px]">
 
-                                                    <td className="h-[60px] pl-2" width={80}>
-                                                        <img  src="./src/assets/img/first-rank.png"></img>
+                                                    <td className=" w-[10%] " >
+                                                        <img className="mx-auto" src="./src/assets/img/first-rank.png"></img>
                                                     </td>
-                                                    <td className="" width={360}>
-                                                        xxxxxx
+                                                    <td className=" w-[40%]  px-1">
+                                                        SAM
                                                     </td>
-                                                    <td width={260}>
+                                                    <td className="w-[25%] ">
                                                         Chiến Thần 310
                                                     </td>
-                                                    <td className="break-all">
-                                                    1,201,546,211,23454
+                                                    <td className="break-all ">
+                                                        1,201,546,211,234
                                                     </td>
                                                 </tr>
-                                                <tr className="border-b-2 border-[#54493b]">
+                                                <tr className="border-b-2 border-[#54493b] [&>td]:h-[37px] md:[&>td]:h-[60px]">
 
-                                                    <td className="h-[60px] pl-2" width={80}>
-                                                        <img  src="./src/assets/img/second-rank.png"></img>
+                                                    <td className="" >
+                                                        <img className="mx-auto" src="./src/assets/img/second-rank.png"></img>
                                                     </td>
-                                                    <td className="" width={360}>
+                                                    <td className="">
                                                         xxxxxx
                                                     </td>
-                                                    <td width={260}>
+                                                    <td >
                                                         Server xxxx
                                                     </td>
                                                     <td>
-                                                    1,201,546,211,234
+                                                        1,201,546,211,234
                                                     </td>
                                                 </tr>
-                                                <tr className="border-b-2 border-[#54493b]">
+                                                <tr className="border-b-2 border-[#54493b] [&>td]:h-[37px] md:[&>td]:h-[60px]">
 
-                                                    <td className="h-[60px] pl-2" width={80}>
-                                                        <img  src="./src/assets/img/third-rank.png"></img>
+                                                    <td className="" >
+                                                        <img className="mx-auto" src="./src/assets/img/third-rank.png"></img>
                                                     </td>
-                                                    <td className="" width={360}>
+                                                    <td className="">
                                                         xxxxxx
                                                     </td>
-                                                    <td width={260}>
+                                                    <td >
                                                         Server xxxx
                                                     </td>
                                                     <td>
-                                                    1,201,546,211,234
+                                                        1,201,546,211,234
                                                     </td>
                                                 </tr>
+                                                {rankData.map((data,index)=>{
+                                                    return(
+                                                        <tr key={index} className="border-b-2 border-[#54493b] [&>td]:h-[37px] md:[&>td]:h-[60px]">
+
+                                                    <td className="" >
+                                                        {index + 4}
+                                                    </td>
+                                                    <td className="">
+                                                        xxxxxx
+                                                    </td>
+                                                    <td >
+                                                        Server xxxx
+                                                    </td>
+                                                    <td>
+                                                        1,201,546,211,234
+                                                    </td>
+                                                </tr>
+                                                    )
+                                                })}
+
                                                 
-                                                <tr className="border-b-2 border-[#54493b]">
 
-                                                    <td className="h-[60px]" width={80}>
-                                                        4
-                                                    </td>
-                                                    <td className="" width={360}>
-                                                        xxxxxx
-                                                    </td>
-                                                    <td width={260}>
-                                                        Server xxxx
-                                                    </td>
-                                                    <td>
-                                                    1,201,546,211,234
-                                                    </td>
-                                                </tr>
-                                                <tr className="border-b-2 border-[#54493b]">
-
-                                                    <td className="h-[60px]" width={80}>
-                                                        4
-                                                    </td>
-                                                    <td className="" width={360}>
-                                                        xxxxxx
-                                                    </td>
-                                                    <td width={260}>
-                                                        Server xxxx
-                                                    </td>
-                                                    <td>
-                                                    1,201,546,211,234
-                                                    </td>
-                                                </tr>
-                                                <tr className="border-b-2 border-[#54493b]">
-
-                                                    <td className="h-[60px]" width={80}>
-                                                        4
-                                                    </td>
-                                                    <td className="" width={360}>
-                                                        xxxxxx
-                                                    </td>
-                                                    <td width={260}>
-                                                        Server xxxx
-                                                    </td>
-                                                    <td>
-                                                    1,201,546,211,234
-                                                    </td>
-                                                </tr>
-                                                <tr className="border-b-2 border-[#54493b]">
-
-                                                    <td className="h-[60px]" width={80}>
-                                                        4
-                                                    </td>
-                                                    <td className="" width={360}>
-                                                        xxxxxx
-                                                    </td>
-                                                    <td width={260}>
-                                                        Server xxxx
-                                                    </td>
-                                                    <td>
-                                                    1,201,546,211,234
-                                                    </td>
-                                                </tr>
-                                                <tr className="border-b-2 border-[#54493b]">
-
-                                                    <td className="h-[60px]" width={80}>
-                                                        4
-                                                    </td>
-                                                    <td className="" width={360}>
-                                                        xxxxxx
-                                                    </td>
-                                                    <td width={260}>
-                                                        Server xxxx
-                                                    </td>
-                                                    <td>
-                                                    1,201,546,211,234
-                                                    </td>
-                                                </tr>
-                                                <tr className="border-b-2 border-[#54493b]">
-
-                                                    <td className="h-[60px]" width={80}>
-                                                        4
-                                                    </td>
-                                                    <td className="" width={360}>
-                                                        xxxxxx
-                                                    </td>
-                                                    <td width={260}>
-                                                        Server xxxx
-                                                    </td>
-                                                    <td>
-                                                    1,201,546,211,234
-                                                    </td>
-                                                </tr>
-                                                <tr className="border-b-2 border-[#54493b]">
-
-                                                    <td className="h-[60px]" width={80}>
-                                                        4
-                                                    </td>
-                                                    <td className="" width={360}>
-                                                        xxxxxx
-                                                    </td>
-                                                    <td width={260}>
-                                                        Server xxxx
-                                                    </td>
-                                                    <td>
-                                                    1,201,546,211,234
-                                                    </td>
-                                                </tr>
-                                                <tr className="border-b-2 border-[#54493b]">
-
-                                                    <td className="h-[60px]" width={80}>
-                                                        4
-                                                    </td>
-                                                    <td className="" width={360}>
-                                                        xxxxxx
-                                                    </td>
-                                                    <td width={260}>
-                                                        Server xxxx
-                                                    </td>
-                                                    <td>
-                                                    1,201,546,211,234
-                                                    </td>
-                                                </tr>
-                                                <tr className="border-b-2 border-[#54493b]">
-
-                                                    <td className="h-[60px]" width={80}>
-                                                        4
-                                                    </td>
-                                                    <td className="" width={360}>
-                                                        xxxxxx
-                                                    </td>
-                                                    <td width={260}>
-                                                        Server xxxx
-                                                    </td>
-                                                    <td>
-                                                    1,201,546,211,234
-                                                    </td>
-                                                </tr>
-                                                <tr className="border-b-2 border-[#54493b]">
-
-                                                    <td className="h-[60px]" width={80}>
-                                                        4
-                                                    </td>
-                                                    <td className="" width={360}>
-                                                        xxxxxx
-                                                    </td>
-                                                    <td width={260}>
-                                                        Server xxxx
-                                                    </td>
-                                                    <td>
-                                                    1,201,546,211,234
-                                                    </td>
-                                                </tr>
-                                                <tr className="border-b-2 border-[#54493b]">
-
-                                                    <td className="h-[60px]" width={80}>
-                                                        4
-                                                    </td>
-                                                    <td className="" width={360}>
-                                                        xxxxxx
-                                                    </td>
-                                                    <td width={260}>
-                                                        Server xxxx
-                                                    </td>
-                                                    <td>
-                                                    1,201,546,211,234
-                                                    </td>
-                                                </tr>
-                                                
                                             </tbody>
                                         </table>
                                     </div>
@@ -516,11 +402,10 @@ function HomePage() {
                     </div>
                 </div>
                 <div className='fixed w-full float top-0 z-50'>
-                    {/* <SocialBoardRelease/> */}
-                    {/* <SocialBoardPreRelease />
+                    <SocialBoardRelease/>
                     <div className="scale-[.5] xl:scale-[.6] xxl:scale-[.8] xxxl:scale-100 origin-top-left">
                         <Navigation  />
-                    </div> */}
+                    </div>
                 </div>
 
 

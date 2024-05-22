@@ -66,5 +66,48 @@ export const mockData = {
             fullBodyImg: './src/assets/img/NgoKhong.png',
             shadowImg: './src/assets/img/NgoKhong-shadow-1.png'
         },
-    ]
+    ],
+    news:[{
+        _id:'news-id-1',
+        category:'news',
+        title:'Cảnh báo Lừa Đảo và Khóa Tài Khoản Nạp Lậu',
+        date:'26/04/2024 - 16:08:34',
+        
+    }
+    ,{
+        _id:'news-id-2',
+        category:'event',
+        title:'Cảnh báo Lừa Đảo và Khóa Tài Khoản Nạp Lậu',
+        date:'26/04/2024 - 16:08:34',
+        
+    }
+    ,{
+        _id:'news-id-3',
+        category:'news',
+        title:'Cảnh báo Lừa Đảo và Khóa Tài Khoản Nạp Lậu',
+        date:'26/04/2024 - 16:08:34',
+        
+    }
+    ,{
+        _id:'news-id-4',
+        category:'tutorial',
+        title:'Cảnh báo Lừa Đảo và Khóa Tài Khoản Nạp Lậu',
+        date:'26/04/2024 - 16:08:34',
+        
+    }
+    ,{
+        _id:'news-id-5',
+        category:'news',
+        title:'Cảnh báo Lừa Đảo và Khóa Tài Khoản Nạp Lậu',
+        date:'26/04/2024 - 16:08:34',
+        
+    }
+    ,{
+        _id:'news-id-6',
+        category:'event',
+        title:'Cảnh báo Lừa Đảo và Khóa Tài Khoản Nạp Lậu',
+        date:'26/04/2024 - 16:08:34',
+        
+    }
+]
 }

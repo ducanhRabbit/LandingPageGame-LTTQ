@@ -53,6 +53,8 @@ body {
   
 }
 
+
+
 .main-text {
   font-size: 76px;
   font-family: "League Gothic", sans-serif;
@@ -71,7 +73,7 @@ swiper-container {
 }
 
 swiper-slide {
-  height: 100%;
+  height: auto;
 }
 
 .myBullet{
@@ -88,5 +90,16 @@ swiper-slide {
   background-image: url('./src/assets/img/active-dot-slider.png');
   transform: scale(1.6);
 }
+
+/* Scrollbar Rank Section */
+.rankScrollBar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.rankScrollBar::-webkit-scrollbar-thumb {
+  background: #747474;
+  border-radius: 5px;
+}
+
 
 
