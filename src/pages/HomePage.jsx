@@ -14,7 +14,7 @@ function HomePage() {
     const { screenWidth, screenHeight, isMobile } = useScreenSize();
     const ratio = screenWidth / (isMobile ? 768 : 1920);
 
-    const [activeTab,setActiveTab] = useState('news')
+    const [activeTab, setActiveTab] = useState('news')
 
     const rankData = [...Array(97)]
 
@@ -96,7 +96,7 @@ function HomePage() {
                         >
                             <div className="wrapper px-5">
                                 <div className="flex justify-center items-center gap-[24px]">
-                                    <div className="playNow_btn cursor-pointer">
+                                    <div className="playNow_btn cursor-pointer hover:brightness-110">
                                         <img className="-mt-[24px]" src="./src/assets/img/playNow-btn.png"></img>
                                     </div>
 
@@ -148,19 +148,19 @@ function HomePage() {
                                                 <div className="notice-content pt-[26px] md:pt-[35px] px-6 pr-8 flex flex-col h-full justify-between">
                                                     <div className="tabs-control flex justify-between items-center">
                                                         <div className="flex gap-4">
-                                                            <button onClick={()=>{
+                                                            <button onClick={() => {
                                                                 setActiveTab('news')
-                                                            }} className={`${activeTab === 'news'?'bg-white text-[#1e3748]':''} text-3xl p-3 md:text-2xl md:p-2`}>
+                                                            }} className={`${activeTab === 'news' ? 'bg-white text-[#1e3748]' : ''} text-3xl p-3 md:text-2xl md:p-2`}>
                                                                 Tin tức
                                                             </button>
-                                                            <button onClick={()=>{
+                                                            <button onClick={() => {
                                                                 setActiveTab('events')
-                                                            }} className={`${activeTab === 'events'?'bg-white text-[#1e3748]':''} text-3xl p-3 md:text-2xl md:p-2`}>
+                                                            }} className={`${activeTab === 'events' ? 'bg-white text-[#1e3748]' : ''} text-3xl p-3 md:text-2xl md:p-2`}>
                                                                 Sự kiện
                                                             </button>
-                                                            <button onClick={()=>{
+                                                            <button onClick={() => {
                                                                 setActiveTab('tutorial')
-                                                            }} className={`${activeTab === 'tutorial'?'bg-white text-[#1e3748]':''} text-3xl p-3 md:text-2xl md:p-2`}>
+                                                            }} className={`${activeTab === 'tutorial' ? 'bg-white text-[#1e3748]' : ''} text-3xl p-3 md:text-2xl md:p-2`}>
                                                                 Hướng Dẫn
                                                             </button>
                                                         </div>
@@ -260,34 +260,36 @@ function HomePage() {
                             </div>
                         </section>
                         <section className="rank relative md:min-h-[1200px]">
-                            <div className="absolute -top-[100px] md:-top-[200px] -z-10 bg-white">
-                                <img className="object-cover z-0" src="./src/assets/img/test-bg.png" />
+                            <div className="absolute -top-[246px] md:-top-[200px] -z-10 bg-white">
+                                <img className={`${!isMobile && 'hidden'} object-cover z-0`} src="./src/assets/img/bg-section-5-mobile-home.png" />
+                                <img className={`${isMobile && 'hidden'} object-cover z-0`} src="./src/assets/img/test-bg.png" />
                             </div>
                             <div className="absolute -top-[20px] md:-top-[60px] left-1/2 -translate-x-1/2">
                                 <img className="mx-auto " src="./src/assets/img/rank-title.png"></img>
                             </div>
-                            <div className="wrapper relative pt-[64px] md:pt-[80px] pb-[62px] md:pb-[290px]">
-                                <img className="absolute object-cover top-[68px] -z-10 -translate-x-1/2 left-1/2" src="./src/assets/img/rank-board.png"></img>
-                                <div className="rank-table pt-[81px] md:pt-[136px] relative flex flex-col w-[480px] md:w-[1000px] mx-auto">
+                            <div className="wrapper relative pt-[64px] md:pt-[80px] pb-[160px] md:pb-[290px]">
+                                <img className={`${!isMobile ? '' : 'hidden'} absolute object-cover top-[68px] -z-10 -translate-x-1/2 left-1/2`} src="./src/assets/img/rank-board.png"></img>
+                                <img className={`${isMobile ? '' : 'hidden'} absolute object-cover top-[68px] -z-10 -translate-x-1/2 left-1/2`} src="./src/assets/img/rank-board-mobile.png"></img>
+                                <div className="rank-table pt-[81px] md:pt-[136px] relative flex flex-col w-[600px] md:w-[1000px] mx-auto">
                                     <div className="rank-categories">
                                         <div className="flex justify-center font-gothic">
                                             <div className="relative cursor-pointer">
                                                 <img src="./src/assets/img/rank-tab(active).png"></img>
-                                                <span className="text-[18px] md:text-[40px] text-[#693e03] absolute top-[9px] left-[46px] md:top-[18px] md:left-[102px]">BXH Server</span>
+                                                <span className="text-[20px] md:text-[40px] text-[#693e03] absolute top-[14px] left-[62px] md:top-[18px] md:left-[102px]">BXH Server</span>
                                             </div>
                                             <div className="relative cursor-pointer">
                                                 <img src="./src/assets/img/rank-tab(unactive).png"></img>
-                                                <span className="text-[18px] md:text-[40px] text-[#383838] absolute top-[9px] left-[46px] md:top-[18px] md:left-[102px]">BXH Bang Hội</span>
+                                                <span className="text-[20px] md:text-[40px] text-[#383838] absolute top-[14px] left-[62px] md:top-[18px] md:left-[102px]">BXH Bang Hội</span>
                                             </div>
                                             <div className="relative cursor-pointer">
                                                 <img src="./src/assets/img/rank-tab(unactive).png"></img>
-                                                <span className="text-[18px] md:text-[40px] text-[#383838] absolute top-[9px] left-[46px] md:top-[18px] md:left-[102px]">BXH TOP Cụm</span>
+                                                <span className="text-[20px] md:text-[40px] text-[#383838] absolute top-[14px] left-[62px] md:top-[18px] md:left-[102px]">BXH TOP Cụm</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className=" mt-[40px] w-full h-[250px] md:h-[700px] overflow-auto md:mt-[68px] rankScrollBar">
-                                        <table className="w-full  font-gothic md:text-[34px]">
-                                            <thead className="absolute w-full top-[132px] md:top-[240px]">
+                                    <div className=" mt-[40px] w-full h-[320px] md:h-[700px] overflow-auto md:mt-[68px] rankScrollBar">
+                                        <table className="w-full  font-gothic text-[20px] md:text-[34px]">
+                                            <thead className="absolute w-full top-[137px] md:top-[240px]">
                                                 <tr className="  flex">
                                                     <th className="w-[10%]" >Hạng</th>
                                                     <th className="w-[40%]">Tên nhân vật</th>
@@ -341,27 +343,27 @@ function HomePage() {
                                                         1,201,546,211,234
                                                     </td>
                                                 </tr>
-                                                {rankData.map((data,index)=>{
-                                                    return(
+                                                {rankData.map((data, index) => {
+                                                    return (
                                                         <tr key={index} className="border-b-2 border-[#54493b] [&>td]:h-[37px] md:[&>td]:h-[60px]">
 
-                                                    <td className="" >
-                                                        {index + 4}
-                                                    </td>
-                                                    <td className="">
-                                                        xxxxxx
-                                                    </td>
-                                                    <td >
-                                                        Server xxxx
-                                                    </td>
-                                                    <td>
-                                                        1,201,546,211,234
-                                                    </td>
-                                                </tr>
+                                                            <td className="" >
+                                                                {index + 4}
+                                                            </td>
+                                                            <td className="">
+                                                                xxxxxx
+                                                            </td>
+                                                            <td >
+                                                                Server xxxx
+                                                            </td>
+                                                            <td>
+                                                                1,201,546,211,234
+                                                            </td>
+                                                        </tr>
                                                     )
                                                 })}
 
-                                                
+
 
                                             </tbody>
                                         </table>
@@ -402,9 +404,9 @@ function HomePage() {
                     </div>
                 </div>
                 <div className='fixed w-full float top-0 z-50'>
-                    <SocialBoardRelease/>
+                    <SocialBoardRelease />
                     <div className="scale-[.5] xl:scale-[.6] xxl:scale-[.8] xxxl:scale-100 origin-top-left">
-                        <Navigation  />
+                        <Navigation />
                     </div>
                 </div>
 

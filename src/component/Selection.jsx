@@ -35,7 +35,7 @@ function Selection() {
                 <img loading='lazy' className='mx-auto' src='./src/assets/img/title-section3.png' />
             </div>
 
-            <div className=' flex flex-col gap-4 mx-auto md:gap-0 w-full md:flex-row md:w-[80%] px-[16px]'>
+            <div className=' flex flex-col gap-4 mx-auto md:gap-0 w-full md:flex-row md:w-[80%] px-[28px]'>
                 <div className='left md:w-[50%] flex flex-col gap-4 md:items-center'>
                     <div className='char-info w-[50%] md:w-[500px] relative flex flex-col text-black'>
                         <div className='text-[2rem] md:text-[2.5rem] relative py-6'>
