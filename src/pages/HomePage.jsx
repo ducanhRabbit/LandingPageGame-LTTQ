@@ -102,48 +102,15 @@ function HomePage() {
 
                                     <DownlBoard></DownlBoard>
                                 </div>
-                                <div className="notice-board mt-[60px] flex flex-col gap-8">
-                                    {
-                                        isMobile && <div className="">
-                                            <swiper-container class="mySwiper3"
-                                                slides-per-view="1"
-                                                grab-cursor="true"
-                                                loop='true'
-                                            >
-
-                                                <swiper-slide class=''>
-                                                    <img loading='lazy' className={` w-full  h-full  object-cover`} src="./src/assets/img/new-slide.png" />
-                                                </swiper-slide>
-                                                <swiper-slide class=''>
-                                                    <img loading='lazy' className={`block w-full  h-full  object-cover`} src="./src/assets/img/slider-1.png" />
-                                                </swiper-slide>
-
-                                            </swiper-container>
-
-                                        </div>
-                                    }
-                                    <div className="md:w-[1280px] md:h-[435px] relative  bg-white mx-auto shadow-[4px_4px_8px_2px_rgb(0_0_0_/.3)]">
+                                <div className="news-board md:w-[1280px] mt-[60px] flex flex-col md:flex-row mx-auto gap-[24px] md:gap-0 justify-center">
+                                    <div className="news-banner md:w-[60%]">
+                                        <img className="w-full h-full object-cover" src="./src/assets/img/news-banner.jpg"></img>
+                                    </div>
+                                    <div className="relative flex-1 bg-white shadow-[4px_4px_8px_2px_rgb(0_0_0_/.3)]">
                                         <div className="top-line absolute z-0 top-[0px]  md:top-0 md:right-0 w-full h-[80px]">
                                             <img src="./src/assets/img/top-decor.png" className="w-full h-full object-cover"></img>
                                         </div>
                                         <div className="md:flex relative h-full">
-                                            {!isMobile && <div className="md:w-[60%]">
-                                                <swiper-container class="mySwiper3 md:scale-y-110 md:h-full md:pl-8"
-                                                    slides-per-view="1"
-                                                    grab-cursor="true"
-                                                    loop='true'
-                                                >
-
-                                                    <swiper-slide class=''>
-                                                        <img loading='lazy' className={` w-full  h-full  object-cover`} src="./src/assets/img/new-slide.png" />
-                                                    </swiper-slide>
-                                                    <swiper-slide class='h-full'>
-                                                        <img loading='lazy' className={` w-full  h-full  object-cover`} src="./src/assets/img/slider-1.png" />
-                                                    </swiper-slide>
-
-                                                </swiper-container>
-
-                                            </div>}
                                             <div className="flex-1">
                                                 <div className="notice-content pt-[26px] md:pt-[35px] px-6 pr-8 flex flex-col h-full justify-between">
                                                     <div className="tabs-control flex justify-between items-center">
@@ -405,9 +372,9 @@ function HomePage() {
                 </div>
                 <div className='fixed w-full float top-0 z-50'>
                     <SocialBoardRelease />
-                    <div className="scale-[.5] xl:scale-[.6] xxl:scale-[.8] xxxl:scale-100 origin-top-left">
+                    {/* <div className="scale-[.5] xl:scale-[.6] xxl:scale-[.8] xxxl:scale-100 origin-top-left">
                         <Navigation />
-                    </div>
+                    </div> */}
                 </div>
 
 
